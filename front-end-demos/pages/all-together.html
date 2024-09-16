@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>HTML, CSS, and JS together</title>
+		<link
+			rel="stylesheet"
+			href="demo.css"
+		/>
+		<style>
+			/* 
+		selector {
+			declaration;
+			property: value;
+			rollup-property: value value value;
+		}
+		*/
+
+			.custom-class {
+				border: 4px dashed red;
+				margin-top: 25px;
+				padding: 10px;
+				font-family: monospace;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>HTML, CSS, and JavaScript together</h1>
+
+		<section>
+			<h2>CSS usage</h2>
+			<!-- 
+		CSS declaration:
+		property: value;
+		rollup-property: value value value;
+		border is a rollup of: border-size, border-color, border-style
+	 -->
+			<div style="border: black solid 4px; background-color: yellow; font-size: 125%">
+				<p>This is a div with in-line CSS.</p>
+			</div>
+
+			<div class="custom-class">
+				<p>This is a div with document-level CSS</p>
+			</div>
+
+			<div class="stylesheet-class">
+				<p>This is a div with CSS from a separate file</p>
+			</div>
+		</section>
+
+		<section>
+			<h2>JavaScript usage</h2>
+			<div>
+				<p>
+					In-line JavaScript:
+					<button onclick="console.log('Clicked the in-line button')">Click me</button>
+				</p>
+				<p>
+					Document-level JavaScript:
+					<button id="doc-button">Click me</button>
+				</p>
+				<p>
+					JavaScript in a separate file:
+					<button id="file-button">Click me</button>
+				</p>
+				<p>
+					JavaScript in a module file:
+					<button id="module-button">Click me</button>
+				</p>
+			</div>
+		</section>
+
+		<script>
+			let docButton = document.querySelector('#doc-button');
+			docButton.addEventListener('click', () =>
+				console.log('Clicked on the document-level button')
+			);
+		</script>
+		<script src="all-together.js"></script>
+		<script
+			type="module"
+			src="all-together-module.js"
+		></script>
+	</body>
+</html>

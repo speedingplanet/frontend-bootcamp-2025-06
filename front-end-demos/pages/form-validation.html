@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Form Validation</title>
+	</head>
+	<body>
+		<form>
+			<div>
+				<label for="text-example">Text example:</label>
+				<input
+					type="email"
+					name="text-example"
+					id="text-example"
+					minlength="5"
+					maxlength="20"
+					required
+					pattern="\p{Uppercase_Letter}\p{Lowercase_Letter}+"
+				/>
+				<!-- pattern takes advantage of Unicode character classes
+				 Older version
+				 pattern="[A-Z][a-z]+"
+
+				Short, unicode-aware
+				pattern="\p{Lu}\p{L}+"
+				Lu is a [L]etter [u]ppercase
+				L is a [L]etter (upper or lowercase) 
+
+				A more verbose, unicode-aware form would be 
+				pattern="\p{Uppercase_Letter}\p{Lowercase_Letter}+"
+				-->
+				<p>
+					It's required, has a minimum length of 5, a maximum length of 20, and must match a pattern
+					of a capital letter followed by 1 or more lowercase letters
+				</p>
+			</div>
+			<div>
+				<label for="numeric-example">Numeric example</label>
+				<input
+					type="number"
+					name="numeric-example"
+					id="numeric-example"
+					min="10"
+					max="10000"
+					step="2"
+				/>
+				<p>Any number between 10 and 10000 as long as it's even/divisible by 2</p>
+			</div>
+			<button type="submit">Send</button>
+		</form>
+	</body>
+</html>

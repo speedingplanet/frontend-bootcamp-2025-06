@@ -1,0 +1,10 @@
+.flatnav ul {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+	gap: 1em;
+}
+
+main {
+	padding: min(10px, 1vh) min(5px, 1vw);
+}

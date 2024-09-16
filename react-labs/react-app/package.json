@@ -1,0 +1,26 @@
+{
+	"name": "react-app",
+	"private": true,
+	"version": "2.0.0",
+	"type": "module",
+  "author": "John Paxton <pax@speedingplanet.com>",
+	"scripts": {
+		"dev": "node scripts/check-labs.js && vite",
+		"build": "tsc && vite build",
+		"format": "prettier . --check",
+		"format:write": "prettier . --write",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"setup": "node scripts/setup.js",
+		"begin": "node scripts/setup.js begin",
+		"finish": "node scripts/setup.js finish",
+		"preview": "vite preview",
+		"test": "vitest",
+		"test:once": "vitest run",
+		"tsc": "tsc -p tsconfig.json"
+	},
+	"dependencies": {
+		"fs-extra": "^11.2.0",
+		"react-toastify": "^10.0.5"
+	}
+}

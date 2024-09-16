@@ -1,0 +1,130 @@
+/*
+######################################################################
+Material Icons
+######################################################################
+*/
+
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/css/material-icons.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: 'Material Icons Outlined';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/css/material-icons-outlined.woff2) format('woff2');
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	font-feature-settings: 'liga';
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
+
+.material-icons-outlined {
+	font-family: 'Material Icons Outlined';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	font-feature-settings: 'liga';
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+######################################################################
+Custom styles below here
+######################################################################
+*/
+
+.zippay-main {
+	font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro,
+		sans-serif;
+	font-weight: normal;
+}
+
+/* Don't use visited link colors */
+a:visited {
+	color: inherit;
+}
+
+.navbar-list ul {
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+	gap: 1vw;
+}
+
+.navbar-list li {
+	text-align: center;
+	color: #3a6bbf;
+	padding: 8px;
+	border-radius: 10px;
+	flex: 1;
+}
+
+.navbar-list li:hover {
+	background-color: #3a6bbf;
+	color: #bffaf8;
+	transition: all 150ms linear;
+}
+
+.navbar-list a {
+	text-decoration: none;
+}
+
+.page-header > h1 {
+	text-align: center;
+}
+
+.send-payment-form {
+	width: 25vw;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: 1fr;
+	row-gap: 1em;
+	column-gap: 0.5em;
+}
+
+.section-header {
+	margin-bottom: 2vh;
+}
+
+.navbar.btn-group a:hover:not([aria-current='page']) {
+	--bs-btn-color: #000;
+	--bs-btn-bg: #0dcaf0;
+	--bs-btn-border-color: #0dcaf0;
+	--bs-btn-hover-color: #000;
+	--bs-btn-hover-bg: #31d2f2;
+	--bs-btn-hover-border-color: #25cff2;
+	--bs-btn-focus-shadow-rgb: 11, 172, 204;
+	--bs-btn-active-color: #000;
+	--bs-btn-active-bg: #3dd5f3;
+	--bs-btn-active-border-color: #25cff2;
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: #000;
+	--bs-btn-disabled-bg: #0dcaf0;
+	--bs-btn-disabled-border-color: #0dcaf0;
+}

@@ -1,0 +1,11 @@
+.active {
+	font-weight: bold;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+}

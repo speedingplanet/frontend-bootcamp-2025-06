@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Forms</title>
+		<style>
+			.input-container {
+				display: flex;
+				max-width: 25vw;
+			}
+
+			.input-container > div {
+				flex: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>HTML Forms</h1>
+
+		<!-- &lt; for a less-than sign and &gt; for a greater-than sign -->
+		<p>All form elements work inside a &lt;form&gt; element or outside a &lt;form&gt; element</p>
+
+		<!-- method defaults to GET -->
+		<!-- action points back to the same URL, i.e. the form submits data to itself -->
+		<form>
+			<!-- <label for="first-name">Enter your first name:</label> -->
+			<!-- 
+				Just a label and a text field. 
+				The label is associated with the text field by wrapping the text field
+			 -->
+			<label>
+				Enter your first name:
+				<input
+					type="text"
+					name="firstName"
+					id="first-name"
+					placeholder="Enter your name here"
+				/>
+			</label>
+
+			<!-- 
+				Label and a text field in a set of divs. Since the label cannot wrap the text field
+				we use the "for" attribute to associate the label with the text field.
+			 -->
+			<div>
+				<div>
+					<label for="last-name">Enter your last name:</label>
+				</div>
+				<div>
+					<input
+						type="text"
+						name="lastName"
+						id="last-name"
+						maxlength="100"
+					/>
+				</div>
+			</div>
+
+			<!-- div.input-container>(div>label)+div>input:text -->
+			<div class="input-container">
+				<div><label for="text-input-id">Text input</label></div>
+				<!-- Almost always want a name, might need an id if you're using JavaScript -->
+				<div>
+					<input
+						type="text"
+						name="text-input-name"
+						id="text-input-id"
+					/>
+				</div>
+			</div>
+			<div class="input-container">
+				<div><label for="number-input-id">Number input</label></div>
+				<div>
+					<input
+						type="number"
+						name="number-input-name"
+						id="number-input-id"
+						step="5"
+						min="5"
+						max="100"
+						value="0"
+					/>
+				</div>
+			</div>
+			<div class="input-container">
+				<div><label for="number-input-id">Decimal input</label></div>
+				<div>
+					<input
+						type="number"
+						name="decimal-input-name"
+						id="decimal-input-id"
+						step="0.01"
+						min="1.00"
+						max="3.00"
+					/>
+				</div>
+			</div>
+			<div class="input-container">
+				<div><label for="number-input-id">Decimal (string) input</label></div>
+				<div>
+					<input
+						type="string"
+						inputmode="numeric"
+						name="decimal-string-input-name"
+						id="decimal-string-input-id"
+						pattern="\d+\.\d{2}"
+					/>
+				</div>
+			</div>
+
+			<!-- Similar functionality for the email, tel, url types -->
+			<!-- 1) Light validation for email, telephone or URL -->
+			<!-- 2) May modify the virtual keyboard on a mobile device (e.g. including '@' for email) -->
+			<div class="input-container">
+				<div><label for="email-input-id">Email input</label></div>
+				<div>
+					<input
+						type="email"
+						name="email-input-name"
+						id="email-input-id"
+						required
+					/>
+				</div>
+			</div>
+
+			<div>
+				<p>Pick an ice cream flavor</p>
+				<!-- All radios in a set should have the same "name" attribute, but different values -->
+				<label>
+					<input
+						type="radio"
+						name="flavor"
+						value="chocolate"
+						id="flavor-chocolate"
+					/>
+					Chocolate
+				</label>
+				<label>
+					<input
+						type="radio"
+						name="flavor"
+						value="vanilla"
+						id="flavor-vanilla"
+					/>
+					Vanilla
+				</label>
+				<label>
+					<input
+						type="radio"
+						name="flavor"
+						value="strawberry"
+						id="flavor-strawberry"
+						checked
+					/>
+					Strawberry
+				</label>
+			</div>
+
+			<div>
+				<p>Pick some pizza attributes (individual)</p>
+				<!-- Default value attribute for checkboxes is the word "on" -->
+				<input
+					type="checkbox"
+					name="topping-peppers"
+					id="topping-peppers"
+					checked
+				/>
+				<label for="topping-peppers">Peppers</label>
+				<input
+					type="checkbox"
+					name="topping-sausage"
+					id="topping-sausage"
+				/>
+				<label for="topping-sausage">Sausage</label>
+				<input
+					type="checkbox"
+					name="topping-mushrooms"
+					id="topping-mushrooms"
+				/>
+				<label for="topping-mushrooms">Mushrooms</label>
+				<input
+					type="checkbox"
+					name="sauce-regular"
+					id="sauce-regular"
+				/>
+				<label for="sauce-regular">Regular sauce</label>
+				<input
+					type="checkbox"
+					name="sauce-spicy"
+					id="sauce-spicy"
+				/>
+				<label for="sauce-spicy">Spicy sauce</label>
+				<input
+					type="checkbox"
+					name="crust-regular"
+					id="crust-regular"
+				/>
+				<label for="crust-regular">Regular crust</label>
+				<input
+					type="checkbox"
+					name="crust-thin"
+					id="crust-thin"
+				/>
+				<label for="crust-thin">thin crust</label>
+				<input
+					type="checkbox"
+					name="crust-sicilian"
+					id="crust-sicilian"
+				/>
+				<label for="crust-sicilian">sicilian crust</label>
+			</div>
+
+			<div>
+				<p>Pick some pizza toppings (grouped)</p>
+				<!-- 
+					Grouped checkboxes send values like this 
+					topping=peppers&topping=sausage&topping=pineapple
+
+					Most servers will convert this into an array of values
+				-->
+				<input
+					type="checkbox"
+					name="topping"
+					value="peppers"
+					id="combined-topping-peppers"
+				/>
+				<label for="combined-topping-peppers">Peppers</label>
+				<input
+					type="checkbox"
+					name="topping"
+					value="sausage"
+					id="combined-topping-sausage"
+				/>
+				<label for="combined-topping-sausage">Sausage</label>
+				<input
+					type="checkbox"
+					name="topping"
+					value="pineapple"
+					id="combined-topping-pineapple"
+				/>
+				<label for="combined-topping-pineapple">Pineapple</label>
+				<input
+					type="checkbox"
+					name="topping"
+					value="mushrooms"
+					id="combined-topping-mushrooms"
+				/>
+				<label for="combined-topping-mushrooms">Mushrooms</label>
+			</div>
+
+			<div>
+				<p>Select list</p>
+				<!-- label[for] points to input[id] -->
+				<label for="car-make">Select a car manufacturer</label>
+				<select
+					name="car-make"
+					id="car-make"
+				>
+					<option value="">Please select a manufacturer</option>
+					<option value="ford">Ford</option>
+					<option value="honda">Honda</option>
+					<option value="hyundai">Hyundai</option>
+					<option value="dodge">Dodge</option>
+					<option value="gmc">GMC</option>
+				</select>
+			</div>
+			<div style="margin-bottom: 20px">
+				<p>Multiple select list</p>
+				<!-- label[for] points to input[id] -->
+				<label for="fruit">Select some fruit</label>
+				<select
+					multiple
+					size="2"
+					name="fruit"
+					id="fruit"
+				>
+					<option>Apples</option>
+					<option>Bananas</option>
+					<option>Pears</option>
+					<option>Oranges</option>
+					<option>Apricots</option>
+				</select>
+			</div>
+
+			<div>
+				<label for="life-story">Enter your life story below</label>
+				<textarea
+					name="life-story"
+					id="life-story"
+					cols="30"
+					rows="10"
+					maxlength="1000"
+				></textarea>
+			</div>
+			<div>
+				<!-- Easier to style with CSS, easier to work with -->
+				<p>Buttons</p>
+				<button type="submit">Submit</button>
+				<button
+					type="reset"
+					disabled
+				>
+					Reset
+				</button>
+				<button type="button">Generic</button>
+			</div>
+			<div>
+				<!-- Not as easy to style with CSS, kind of a pain in the neck -->
+				<p>Buttons as input types</p>
+				<input type="submit" />
+				<input type="reset" />
+				<input
+					type="button"
+					value="Generic"
+				/>
+			</div>
+		</form>
+	</body>
+</html>

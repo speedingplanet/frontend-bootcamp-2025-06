@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>CSS Specificity</title>
+		<style>
+			.container {
+				display: flex;
+				justify-content: space-between;
+			}
+			.container > .box {
+				flex: 1 1; /* can grow and shrink */
+				margin: 0 5%; /* horizontal margins only */
+				border: 2px solid black;
+			}
+
+			.box {
+				background-color: green;
+			}
+
+			#box-container #third-box {
+				background-color: orange;
+			}
+
+			#third-box {
+				background-color: cadetblue;
+			}
+
+			.box:first-child:has(p) {
+				background-color: aqua;
+			}
+
+			.box:nth-child(odd) {
+				background-color: yellow;
+			}
+
+			.container div:last-child {
+				background-color: violet !important;
+			}
+
+			/* Specificity: 0, 0, 4 */
+			/*
+			body div div p {
+				font-family: 'Courier New', Courier, monospace;
+			}
+			*/
+
+			/* Specificity: 0, 1, 1 */
+			/*
+			p:last-child {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+			*/
+		</style>
+	</head>
+	<body>
+		<h1>CSS Specificity</h1>
+		<div
+			class="container"
+			id="box-container"
+		>
+			<div class="box">
+				<p>Box #1</p>
+			</div>
+			<div class="box">
+				<p>Box #2</p>
+			</div>
+			<div
+				class="box"
+				id="third-box"
+			>
+				<p>Box #3</p>
+			</div>
+			<div class="box">
+				<p>Box #4</p>
+			</div>
+			<div
+				class="box"
+				style="background-color: chartreuse"
+			>
+				<p>Box #5</p>
+			</div>
+		</div>
+	</body>
+</html>

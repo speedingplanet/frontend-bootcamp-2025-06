@@ -1,0 +1,14 @@
+{
+	"name": "front-end-demos",
+	"private": true,
+	"version": "2.0.0",
+	"type": "module",
+  "author": "John Paxton <pax@speedingplanet.com>",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"format:write": "prettier . --write",
+		"format": "prettier . --check",    
+		"preview": "vite preview"
+	}
+}

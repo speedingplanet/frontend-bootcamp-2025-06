@@ -1,0 +1,8 @@
+.calculator-display {
+	display: flex;
+}
+
+.calculator-display > div {
+	flex: 1 1 content-width;
+	padding: 0 1em 0 0;
+}

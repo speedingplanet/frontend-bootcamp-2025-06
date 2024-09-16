@@ -1,0 +1,8 @@
+dist
+backups
+.vscode
+package.json
+package-lock.json
+*.css
+countries-table.json
+tsconfig.*json

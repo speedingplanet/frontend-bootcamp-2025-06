@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>HTML Anchor tags</title>
+	</head>
+	<body>
+		<h1 id="page-top">Different kinds of anchors</h1>
+		<ul>
+			<li>
+				Relative link (no starting /):
+				<a href="html-experiments.html">HTML Experiments</a>
+			</li>
+			<li>
+				Relative link (different directory):
+				<a href="../index.html">Home page</a>
+			</li>
+			<li>
+				Absolute link (starts with a /):
+				<a href="/nested/content/absolute.html">Absolute reference</a>
+			</li>
+			<li>
+				External link (starts with a protocol, like http:// or https://):
+				<a href="https://intuit.com/">Intuit</a>
+			</li>
+			<li>
+				Send
+				<a href="mailto:pax@speedingplanet.com">me</a>
+				an e-mail.
+			</li>
+			<li>
+				Other possible protocols (depending on browser and configuration):
+				<code>tel:</code>
+				,
+				<code>ftp://</code>
+				,
+				<code>telnet://</code>
+				, possibly others!
+			</li>
+			<li>
+				<a href="#page-bottom">Link</a>
+				to the bottom of the page
+			</li>
+			<li style="height: 150vh">Scroll down</li>
+			<li id="page-bottom">Bottom of the page</li>
+			<li>
+				<a href="#page-top">Back</a>
+				to top
+			</li>
+		</ul>
+	</body>
+</html>

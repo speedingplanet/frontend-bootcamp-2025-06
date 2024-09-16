@@ -1,0 +1,20 @@
+{
+  "name": "front-end-labs",
+  "version": "2.0.0",
+  "main": "index.js",
+	"type": "module",
+  "author": "John Paxton <pax@speedingplanet.com>",
+  "scripts": {
+    "format": "prettier . --check",
+    "format:write": "prettier . --write",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "description": "",
+	"devDependencies": {
+		"front-end-apps": "file:front-end-apps"
+	}
+}

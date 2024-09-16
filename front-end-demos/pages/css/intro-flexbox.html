@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Introduction to Flexbox</title>
+		<style>
+			div {
+				box-sizing: border-box;
+			}
+
+			section {
+				margin-bottom: 4vh;
+			}
+
+			.container {
+				border: 4px solid black;
+				display: flex;
+				height: 200px;
+			}
+
+			.child {
+				border: 2px red dashed;
+			}
+
+			.plain-flex .child {
+				height: 150px;
+				width: 150px;
+			}
+
+			.flex-with-space .container {
+				/* 
+				flex-start (default)
+				flex-end
+				center
+				space-evenly 
+				space-around
+				space-between
+				*/
+				justify-content: space-around;
+			}
+
+			.flex-with-space .child {
+				height: 100px;
+				width: 100px;
+			}
+
+			.flex-grow .child {
+				/* flex: grow, shrink, basis */
+				flex: 1;
+				height: 100px;
+				width: 100px;
+			}
+
+			.flex-grow .child:first-child {
+				flex: 3;
+			}
+
+			.cross-axis .child {
+				min-height: 100px;
+				width: 100px;
+			}
+			.cross-axis .container {
+				justify-content: space-around;
+				align-items: baseline;
+			}
+
+			.cross-axis .child:nth-child(1) {
+				min-height: 150px;
+				padding-top: 25px;
+			}
+
+			.cross-axis .child:nth-child(4) {
+				min-height: 50px;
+				padding-top: 5px;
+			}
+
+			section.items-vs-content {
+				border: 4px orange solid;
+			}
+
+			section.items-vs-content .container {
+				flex-wrap: wrap;
+				/* height: 500px; */
+				height: auto;
+
+				/* Applies when there is NO cross-axis space */
+				align-items: flex-start;
+
+				/* Applies when there IS cross-axis space */
+				align-content: flex-end;
+			}
+
+			section.items-vs-content .child {
+				width: 100px;
+				min-height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Introduction to Flexbox</h1>
+		<section class="plain-flex">
+			<h2>Plain flex</h2>
+			<div class="container">
+				<div class="child">One</div>
+				<div class="child">Two</div>
+				<div class="child">Three</div>
+			</div>
+		</section>
+
+		<section class="flex-with-space">
+			<h2>Flex with space</h2>
+			<div class="container">
+				<div class="child">One</div>
+				<div class="child">Two</div>
+				<div class="child">Three</div>
+				<div class="child">Four</div>
+				<div class="child">Five</div>
+			</div>
+		</section>
+
+		<section class="flex-grow">
+			<h2>Flex with grow-to-fit</h2>
+			<div class="container">
+				<div class="child">One</div>
+				<div class="child">Two</div>
+				<div class="child">Three</div>
+				<div class="child">Four</div>
+				<div class="child">Five</div>
+			</div>
+		</section>
+
+		<section class="cross-axis">
+			<h2>Cross axis positioning</h2>
+			<div class="container">
+				<div class="child">One</div>
+				<div class="child">Two</div>
+				<div class="child">Three</div>
+				<div class="child">Four</div>
+				<div class="child">Five</div>
+			</div>
+		</section>
+
+		<section class="items-vs-content">
+			<h2>Aligning items vs content</h2>
+			<div class="container">
+				<div class="child">One</div>
+				<div class="child">Two</div>
+				<div class="child">Three</div>
+				<div class="child">Four</div>
+				<div class="child">Five</div>
+				<div class="child">Six</div>
+				<div class="child">Seven</div>
+				<div class="child">Eight</div>
+				<div class="child">Nine</div>
+				<div class="child">Ten</div>
+			</div>
+		</section>
+	</body>
+</html>

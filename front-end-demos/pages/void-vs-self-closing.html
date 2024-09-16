@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Void vs Self-Closing Elements</title>
+</head>
+<body>
+
+	<header>
+		<h1>Void vs self-closing elements</h1>
+	</header>
+
+<section>
+	<h2>Definitions</h2>
+	<p>A <em>void</em> element is a tag that has no closing pair. <br>
+		Think break <code>&lt;br&gt;</code> and input <code>&lt;input&gt;</code> elements. <br>
+		A complete list can be found <a href="https://developer.mozilla.org/en-US/docs/Glossary/Void_element">here</a> 
+	</p>
+	<p>A self-closing element does not exist in HTML. In XHTML, or XML, a self-closing element looks
+		like a void tag, but includes a slash / at the end. Like this <code>&lt;br /&gt;</code>. <br>
+		Browsers will ignore the trailing slash. 
+	</p>
+</section>
+
+<section>
+	<h2>Examples</h2>
+
+	This is a proper break: <br>
+
+<!-- HTML validation should ignore the trailing slash -->
+This is an XHTML break: <br />
+
+<!-- Don't do this. This renders as 2(!) <br> tags -->
+<br>Render?</br>
+
+	<!-- <br> Render? <br> -->
+
+<p>Proper paragraph</p>
+
+Outside of a paragraph
+<p/> <!-- A browser sees this as an opening paragraph-->
+A second bit of text
+Some text 
+<!-- And then inserts a closing paragraph here, because -->
+<p/> <!-- This implies ANOTHER opening paragraph -->
+
+<p>A final paragraph</p>
+
+
+<p>Outer paragraph
+	<p>
+		Inner paragraph
+	</p>
+</p>
+
+<p>
+	Text
+	<ul>
+		<li>This is now OUTSIDE the paragraph</li>
+	</ul>
+</p>
+</section>
+
+</body>
+</html>

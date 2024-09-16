@@ -1,0 +1,5 @@
+.bananas::before, .bananas::after {
+	content: '🍌'
+}
+
+

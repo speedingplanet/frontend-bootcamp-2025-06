@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>CSS Colors</title>
+		<style>
+			.box {
+				width: 100px;
+				height: 100px;
+				border: 2px black solid;
+				margin-bottom: 10px;
+			}
+
+			.box:first-child {
+				background-color: blue;
+			}
+
+			.box:nth-child(2) {
+				/* Red, Green, Blue, 0-255 expressed in Hex: 00-FF */
+				background-color: #0000ff;
+			}
+
+			.box:nth-child(3) {
+				background-color: #0af; /* #00AAFF */
+			}
+
+			.box:nth-child(4) {
+				background-color: rgb(0, 0, 255);
+			}
+
+			.box:nth-child(5) {
+				background-color: rgb(0, 0, 255);
+			}
+
+			.box:nth-child(6) {
+				background-color: rgba(255, 0, 0, 50%);
+				margin-top: -60px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CSS Colors</h1>
+
+		<!-- section>div.box*10{Box #$} -->
+		<section>
+			<div class="box">Box #1</div>
+			<div class="box">Box #2</div>
+			<div class="box">Box #3</div>
+			<div class="box">Box #4</div>
+			<div class="box">Box #5</div>
+			<div class="box">Box #6</div>
+			<div
+				class="box"
+				style="background-color: orange; border: 2px dashed green"
+			>
+				Box #7
+			</div>
+		</section>
+	</body>
+</html>

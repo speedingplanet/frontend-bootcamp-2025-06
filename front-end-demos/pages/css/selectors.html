@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>CSS Selectors</title>
+		<style>
+			/* Selector building blocks */
+			/* Tags */
+			li {
+				color: red;
+			}
+
+			/* ID attributes */
+			#id-example {
+				font-weight: bold;
+			}
+
+			/* CSS class name */
+			.class-example {
+				font-family: 'Courier New', Courier, monospace;
+			}
+
+			/* HTML attribute */
+			/* Just checks for the presence of an attribute, later we will look for a value */
+			[title] {
+				text-decoration: underline;
+			}
+
+			/* Combining selectors */
+			/* tag and class */
+			li.last-one {
+				background-color: yellow;
+			}
+
+			/* attribute with value, case insensitive */
+			[title='asia' i] {
+				background-color: lightblue;
+			}
+
+			/* tag, class, attribute */
+			li[title].second-one {
+				text-decoration: none;
+			}
+
+			/* Multiple selectors */
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				border-top: black 2px solid;
+				border-bottom: black 2px solid;
+			}
+
+			/* Multiple selectors are full selectors */
+			.first-one,
+			p,
+			li[alt],
+			div > p > dt,
+			section span {
+				/* Doesn't really do anything */
+				font-size: inherit;
+			}
+
+			/* Selector relationships */
+			/* Parent-child '>' */
+			.reset > h2 {
+				text-decoration: underline;
+			}
+
+			/* This doesn't work, no child li's under div */
+			.reset > li {
+				text-decoration: underline;
+			}
+
+			.reset > p {
+				color: blue;
+			}
+
+			/* Find ANY child elements, regardless of type, under a div */
+			div > * {
+				font-size: inherit;
+			}
+
+			/* Find effectively grandchild elements */
+			div > * > * {
+				font-size: inherit;
+			}
+
+			/* ALL descendants of a div */
+			div * {
+				font-size: inherit;
+			}
+
+			/* Ancestor-descendant: li's that are under (at any level) something with the class "reset" */
+			/* Relationship uses whitespace (unfortunately) */
+			.reset li {
+				color: black;
+			}
+			div span {
+				color: orange;
+			}
+			div li p {
+				font-weight: bold;
+			}
+
+			/* Sibling relationships */
+			/* Next sibling only */
+			#first-sibling + li {
+				background-color: chartreuse;
+			}
+
+			/* All following siblings */
+			#first-sibling ~ li {
+				text-decoration: underline;
+			}
+
+			/* Best practices */
+			/* Be specific as you need, but no more or less */
+			/* Use anchors */
+			/* ids and classes are good anchors */
+			/* good */
+			#navbar li {
+				font-size: inherit;
+			}
+			/* not as good */
+			nav li {
+				font-size: inherit;
+			}
+			/* probably bad */
+			div li {
+				font-size: inherit;
+			}
+
+			/* don't use ids in the middle of a selector, generally */
+			div > #foo > li {
+				font-size: inherit;
+			}
+			/* This is better */
+			#foo > li {
+				font-size: inherit;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>CSS Selectors</h1>
+		<div>
+			<h2>Selector building blocks</h2>
+			<p>Before the list</p>
+			<ul>
+				<li>This is a list item</li>
+				<li id="id-example">This list item has an ID</li>
+				<li class="class-example">This list item has a class</li>
+				<li title="attribute example">This list item has an attribute</li>
+			</ul>
+			<p class="last-one">After the list</p>
+		</div>
+		<div>
+			<h2>Combined selectors</h2>
+			<ol>
+				<li
+					class="first-one"
+					title="North America"
+				>
+					Mountain View
+				</li>
+				<li
+					class="second-one"
+					title="North America"
+				>
+					New York
+				</li>
+				<li title="Asia">Shanghai</li>
+				<li class="last-one">Hong Kong</li>
+			</ol>
+		</div>
+		<div class="reset">
+			<h2>Selector relationships</h2>
+			<ul>
+				<li>Apples</li>
+				<li>Peaches</li>
+				<li>Pears</li>
+				<li>Oranges</li>
+			</ul>
+			<p>This paragraph is a child of the div with the class reset.</p>
+			<div>
+				Div level
+				<ul>
+					<li>
+						List item
+						<p>
+							Paragraph with a
+							<span>span</span>
+						</p>
+					</li>
+				</ul>
+			</div>
+			<ul>
+				<li id="first-sibling">First</li>
+				<li>Second</li>
+				<li>Third</li>
+				<li>Fourth</li>
+			</ul>
+		</div>
+	</body>
+</html>

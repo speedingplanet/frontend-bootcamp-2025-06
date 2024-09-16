@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Derived Custom Properties</title>
+		<style>
+			:root {
+				/* This works because the numbers have no units */
+				--bg-initial: 0, 127, 0;
+				--bg-initial-transparent: var(--bg-initial), 0.5;
+
+				/* This doesn't seem to have a solution, alas. */
+				--bg-hex-initial: FF0000;
+				--bg-hex-initial-transparent: var(--bg-hex-initial) AA;
+			}
+
+			.container {
+				display: flex;
+				gap: 20px;
+			}
+
+			.box {
+				width: 200px;
+				height: 200px;
+				border: 2px solid black;
+			}
+
+			.initial {
+				background-color: rgba(var(--bg-initial));
+			}
+
+			.derived {
+				background-color: rgba(var(--bg-initial-transparent));
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>Derived custom properties</h1>
+			</header>
+			<section>
+				<p>
+					Can we transform a color value, stored in a custom property, so that there’s a version
+					with modified opacity. For example,
+					<code>-–bg-color=rgb(ff, 0, 0)</code>
+					to
+					<code>--bg-color-half(--bg-color, 0.5)</code>
+				</p>
+			</section>
+			<section class="container">
+				<div class="box initial">Initial box</div>
+				<div class="box derived">Derived box</div>
+			</section>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,145 @@
+main {
+	margin-left: 10vw;
+	margin-right: 10vw;
+}
+
+.container {
+	border: 2px black solid;
+	padding: 10px;
+	width: 50vw;
+
+	display: grid;
+	gap: 5px;
+}
+
+.box {
+	border: 2px red dashed;
+	font-size: 150%;
+
+	/* Grid in a Grid! 🤯 */
+	/* This vertically and horizontally centers the text */
+	display: grid;
+	place-content: center;
+}
+
+.three-by-three {
+	/* grid-template-rows: 1fr 1fr 1fr; */
+	/* grid-template-columns: 1fr 1fr 1fr; */
+
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.two-columns {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.auto-columns {
+	grid-template-rows: repeat(4, 1fr);
+	grid-auto-flow: column;
+}
+
+.horizontal-columns {
+	grid-template-rows: repeat(4, 1fr);
+	grid-auto-flow: column;
+}
+
+.specific-placement {
+	grid-template-rows: repeat(6, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.specific-placement :first-child {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.specific-placement :nth-child(2) {
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
+.specific-placement :nth-child(3) {
+	grid-column: 1 / 3;
+	grid-row: 2 / 4;
+}
+
+.specific-placement :nth-child(5) {
+	grid-column: 3 / span 2;
+}
+
+.specific-placement :nth-child(6) {
+	/* grid-area: row-start / column-start / row-end / column-end */
+	grid-area: 4 / 1 / 6 / 5;
+}
+
+.specific-placement :nth-child(8) {
+	grid-column: span 2;
+}
+
+.named-areas {
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-rows: 1fr 4fr 1fr;
+	grid-template-areas:
+		'ryan ryan ryan'
+		'nav main right-col'
+		'nav footer right-col';
+}
+
+.named-areas .area-header {
+	grid-area: ryan;
+}
+.named-areas .area-nav {
+	grid-area: nav;
+}
+.named-areas .area-main {
+	grid-area: main;
+}
+.named-areas .area-right {
+	grid-area: right-col;
+}
+.named-areas .area-footer {
+	grid-area: footer;
+}
+
+.named-placement {
+	grid-template-rows: repeat(6, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas:
+		'box-1 box-1 box-1 box-2'
+		'box-3 box-3 box-4 box-2'
+		'box-3 box-3 box-5 box-5'
+		'box-6 box-6 box-6 box-6'
+		'box-6 box-6 box-6 box-6'
+		'box-7 box-8 box-8 box-9';
+}
+
+.spec-named-box-1 {
+	grid-area: box-1;
+}
+.spec-named-box-2 {
+	grid-area: box-2;
+}
+.spec-named-box-3 {
+	grid-area: box-3;
+}
+.spec-named-box-4 {
+	grid-area: box-4;
+}
+.spec-named-box-5 {
+	grid-area: box-5;
+}
+.spec-named-box-6 {
+	grid-area: box-6;
+}
+.spec-named-box-7 {
+	grid-area: box-7;
+}
+.spec-named-box-8 {
+	grid-area: box-8;
+}
+.spec-named-box-9 {
+	grid-area: box-9;
+}

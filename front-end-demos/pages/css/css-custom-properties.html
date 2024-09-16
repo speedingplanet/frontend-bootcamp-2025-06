@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>CSS Custom Properties</title>
+		<style>
+			/* 
+			Custom properties must be defined with a selector.
+			This will not work:
+
+			--my-prop: 'value'
+			*/
+
+			/* Use the :root selector to set global variables */
+			:root {
+				--global-property: 'global value';
+				--base-color: #ff0000;
+				--base-number: 1;
+			}
+
+			/* Use a variable */
+			.base-box {
+				width: 100px;
+				height: 100px;
+				background-color: var(--base-color);
+			}
+
+			/* Set a variable for a specific class */
+			.alt-color {
+				--alt-color: #00ff00;
+			}
+
+			/* Use a variable */
+			.alt-box {
+				width: 100px;
+				height: 100px;
+				background-color: var(--alt-color);
+			}
+
+			.override-color {
+				--base-color: #0000ff;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>CSS Custom Properties</h1>
+		</header>
+		<main>
+			<div class="base-box">Base box</div>
+
+			<!-- Note that alt-color has to be included to define the variable -->
+			<div class="alt-color alt-box">Alt Box</div>
+
+			<!-- Override a variable -->
+			<div class="override-color base-box">Base box</div>
+		</main>
+	</body>
+</html>
