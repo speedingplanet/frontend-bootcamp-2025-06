@@ -11,10 +11,10 @@ export default [
 				...globals.node,
 			},
 		},
-		files: ['**/*.jsx', '**/*.tsx'],
+		files: ['**/*.js?(x)', '**/*.ts?(x)'],
 		rules: {
 			'no-unused-private-class-members': 'warn',
-			'no-unused-vars': ['warn'],
+			'no-unused-vars': 'warn',
 		},
 	},
 ];

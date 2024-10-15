@@ -9,6 +9,9 @@ export default tseslint.config(
 	{
 		name: '@speedingplanet/eslint-config',
 		languageOptions: {
+			parserOptions: {
+				warnOnUnsupportedTypeScriptVersion: false,
+			},
 			globals: {
 				...globals.browser,
 				...globals.node,
