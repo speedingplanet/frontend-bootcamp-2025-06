@@ -4,25 +4,31 @@
 
 ### Zippay App: Home page
 
-When we execute `npm run dev` in this folder we are greeted by a blank page. This is, to say the least, confusing! Let's have a proper home / landing page.
+Starting command: `npm run dev`
 
-Working in `index.html`:
+We have a home page that points to "To-dos", which we will build together, "Zippay" which you will build, and "Zippay Finished" which you can use to see completed versions of the Zippay app.
+
+Working in `zippay/index.html`:
 
 - Add the basic strcture of an HTML document. Maybe use Emmet shortcuts to help?
 - In the `body` of the HTML document, add an `h1` element
   - The content of the element should be `The ZipPay app`.
 - Add an `hr` element below it.
 - Below the `hr` element, add a paragraph with some placeholder text, maybe lorem ipsum or just "Content will eventually go here."
-- All set! Take a look at http://localhost:5173, or whatever port your server opened on, to see the results.
+- All set! Take a look at http://localhost:5173/zippay, or whatever port your server opened on, to see the results.
+
+Leave `npm run dev` running.
 
 ### Home Page: Navbar with Text
 
-You may have noticed that we have a `pages/` folder full of placeholder HTML file. Let's build a navigational list, a navbar, to link to those pages
+Starter command: Open up another terminal and run `npm run begin 2`
 
-Working in `index.html`:
+There are now several placeholder files in the `zippay` folder. Let's build a navigational list, a navbar, to link to those pages
 
-- Below the `h1` but above the `hr` add a `nav` element.
-- In the `nav` element, add the following lines, separated by `br` tags for line breaks
+Working in `zippay/index.html`:
+
+- Below the `h1` but above the `hr` add a `p` element.
+- In the `p` element, add the following lines, separated by `br` tags for line breaks
   - Send/Receive
   - Account settings
   - Balance
@@ -33,6 +39,8 @@ Working in `index.html`:
 
 ### Home Page: Navbar as a list
 
+No starting command here, keep working with the previous code
+
 The navbar lacks semantic meaning. That is, it's just a few lines of text: it could be a poem, a list of pages, or gibberish. We should organize it as a unit.
 
 Working in `index.html`, remove the `br` tags. Make each line a list item in an unordered list. To be clear, there should be _one_ unordered list, with the _five_ list items under it. When you're done, check your page in the browser to see what it looks like.
@@ -41,25 +49,29 @@ Note: Eventually, we will do two things: remove the bullets, and lay out the lis
 
 ### Home Page: Navbar with Links
 
+No starting command here, keep working with the previous code
+
 Our navbar is a little bit limited, in that it does not take the user anywhere. Let's change that.
 
 Working in `index.html`:
 
 - Turn each list item into a link, as follows:
-  - Send/Receive: pages/send-receive.html
-  - Account settings: pages/account-settings.html
-  - Balance: pages/balance.html
-  - Search: pages/search.html
-  - Split the bill: pages/split-the-bill.html
+  - Send/Receive: send-receive.html
+  - Account settings: account-settings.html
+  - Balance: balance-and-payments.html
+  - Search: search.html
+  - Split the bill: split-the-bill.html
 - You will not be deleting the list items! The links should go _inside_ the list items
 - Check to see that the links work and go to the appropriate pages
 
 ### Home Page: Semantic updates
 
+Starter command: Keep using your code, or, for a fresh start, run `npm run begin 3`
+
 The home page needs a little bit more organization:
 
 - The `h1` should be inside a `header`
-- We already have the navbar inside a `nav` so we can leave that as-is
+- Change the `p` tag to a `nav` tag to better indicate its semantic role
 - Below the `nav`, add a `main` element. This will be where the main content of the pages goes.
   - Within `main`, add an `h2` with the content "ZipPay Home"
 - Below the `main`, add a `footer` with the following information:
@@ -69,7 +81,9 @@ The home page needs a little bit more organization:
 
 ### Balance: Recent Transactions
 
-We want to add a "Recent Transactions" section to the "Balance" page `pages/balance.html`. We will use an HTML table to list recent transactions.
+Starter command: Keep using your code, or, for a fresh start, run `npm run begin 4`
+
+We want to add a "Recent Transactions" section to the "Balance" page `balance-and-payments.html`. We will use an HTML table to list recent transactions.
 
 First, we should take care of the basics with respect to layout:
 
@@ -129,9 +143,9 @@ You will need a table headers section, with the column headers, and then a table
 
 ### Send/Receive Payments: Add Form
 
-The Send/Receive Payments `pages/send-receive.html` page is a placeholder. Let's make that better!
+The Send/Receive Payments `send-receive.html` page is a placeholder. Let's make that better!
 
-First, layout, same as with `pages/balance.html`:
+First, layout, same as with `balance-and-payments.html`:
 
 - Copy the header, navbar, and footer over from `index.html`. Place them appropriately within the `body` of the HTML document
 - In `main`, add or change the `h2` to read `Send/Receive Payments`
@@ -178,13 +192,13 @@ Now that we know forms pretty well, let's add a form all at once. Account settin
 
 Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve it as follows:
 
-1. Open the file `pages/navbar.html`. We will use this as our baseline. It can be a basic HTML page.
-2. If you want a starter version, you can run this command from the `front-end-labs` directory: `git checkout solutions -- pages/navbar.html`
+1. Open the file `navbar.html`. We will use this as our baseline. It can be a basic HTML page.
+2. If you want a starter version, you can run this command from the `front-end-labs` directory: `git checkout solutions -- navbar.html`
 3. Decide whether you want to use an unordered list, or divs, to set up the navbar. Either one will work.
 
 - If you use an unordered list, the `ul` is the container and the `li` elements are the children.
 - If you use `div`s, the `nav` element is the container and the `div`s are the children
-- You can always copy and paste the navbar from one of the existing pages into `pages/navbar.html`.
+- You can always copy and paste the navbar from one of the existing pages into `navbar.html`.
 
 4. If you use an unordered list, you'll need to remove the `padding` and the `list-style-type` properties or things will look... weird.
 5. Set the container up as a flexbox
@@ -196,8 +210,8 @@ Check out the results!
 
 The Send/Receive and Account Settings forms have the functionality we need, but does have any sort of useful or pleasing layout.
 
-1. Pick either pages/account-settings.html, or pages/send-receive.html
-2. If you want a starter version, you can run this command from the `front-end-labs` directory: `git checkout solutions -- pages/account-settings.html`
+1. Pick either account-settings.html, or send-receive.html
+2. If you want a starter version, you can run this command from the `front-end-labs` directory: `git checkout solutions -- account-settings.html`
 3. Organize the HTML of the form you have chosen so that it will work with a grid. Some questions:
 
 - Does each form element have to be in a div?
@@ -215,10 +229,10 @@ The Send/Receive and Account Settings forms have the functionality we need, but 
 
 Take a look at data/navbar-design.png: ![Design for our Navbar](data/navbar-design.png).
 
-What would we need to build out something like this in pages/navbar.html? Some suggestions:
+What would we need to build out something like this in navbar.html? Some suggestions:
 
-1. Font from Google (take a look at front-end-demos/pages/css/fonts.html for an example)
-2. Icons also from Google (front-end-demos/pages/css/icons.html to see an example of this)
+1. Font from Google (take a look at front-end-demos/css/fonts.html for an example)
+2. Icons also from Google (front-end-demos/css/icons.html to see an example of this)
 3. Flexbox layout for the content
 4. Font size and coloring as well
 5. Spacing between elements
