@@ -9,6 +9,8 @@
 		"build": "vite build",
 		"format:write": "prettier . --write",
 		"format": "prettier . --check",    
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
 		"preview": "vite preview"
 	}
 }
