@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Semantic vs CSS</title>
+	</head>
+	<body>
+		<header>
+			<h1>Semantic elements vs CSS implementations</h1>
+			<hr />
+		</header>
+		<main>
+			<p>
+				It's often not very difficult to re-implement the styling of an HTML element with CSS;
+				<code>&lt;blockquote&gt;</code>
+				for instance
+			</p>
+
+			<blockquote>
+				90% of quotes are made up on the spot.
+				<br />
+				--Abraham Lincoln
+			</blockquote>
+			<p>With CSS...</p>
+			<div style="margin-left: 40px">
+				90% of quotes are made up on the spot.
+				<br />
+				--Abraham Lincoln
+			</div>
+
+			<p>
+				But semantic (and most other) elements carry additional
+				<a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">ARIA</a>
+				<a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles">role</a>
+				information. The
+				<code>role</code>
+				attribute is available, but is often an incomplete or poor substitute for a semantic
+				element's built in accessibility features.
+			</p>
+
+			<p>
+				tl;dr: Prefer actual semantic elements to re-implementations. This is doubly true for form
+				elements.
+			</p>
+		</main>
+	</body>
+</html>
