@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>HTML Entities</title>
+		<style>
+			body {
+				line-height: 1.2;
+			}
+
+			table {
+				border: 2px black solid;
+				/* Makes tr, td, th work like this
+					| cell | cell | cell |
+					Instead of like this
+					| cell || cell || cell |
+					*/
+				border-collapse: collapse;
+			}
+
+			th {
+				text-align: left;
+			}
+
+			th,
+			td {
+				padding: 0 10px;
+				border-left: 2px black solid;
+				border-right: 2px black solid;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>HTML Character Reference</h1>
+
+		<p>
+			HTML character references, also known as entities give you an HTML compliant escape for
+			characters
+		</p>
+
+		<p>
+			The format is an ampersand, a code reference, then a semi-colon.
+			<code>&amp;entity code;</code>
+			. The code reference could be one of three values:
+		</p>
+
+		<ul>
+			<li>
+				A character name:
+				<code>&amp;copy;</code>
+			</li>
+			<li>
+				A hexadecimal code referring to the Unicode value:
+				<code>&amp;xa9;</code>
+			</li>
+			<li>
+				An "HTML Code" which is a decimal value referring to the Unicode value:
+				<code>&amp;169;</code>
+			</li>
+		</ul>
+
+		<p>
+			With the exception of &lt; &gt; and &amp;, most modern browsers will render Unicode characters
+			directly. Outside of the three special characters, it is rare that you will need to use the
+			character reference for any given character. Just use the unicode directly. 🆒 🤯
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Description</th>
+					<th>Code</th>
+					<th>Displayed value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>less-than sign</td>
+					<td>&amp;lt;</td>
+					<td>&lt;</td>
+				</tr>
+				<tr>
+					<td>greater-than sign</td>
+					<td><code>&amp;gt;</code></td>
+					<td><code>&gt;</code></td>
+				</tr>
+				<tr>
+					<td>ampersand</td>
+					<td><code>&amp;amp;</code></td>
+					<td><code>&amp;</code></td>
+				</tr>
+				<tr>
+					<td>trademark</td>
+					<td><code>&amp;trade;</code></td>
+					<td><code>&trade;</code></td>
+				</tr>
+				<tr>
+					<td>copyright</td>
+					<td><code>&amp;copy;</code></td>
+					<td><code>&copy;</code></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

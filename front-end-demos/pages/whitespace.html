@@ -3,8 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="whitespace.css">
 	<title>Whitespace</title>
-</head>
+	<style>
+		.preformat {
+			white-space: pre;
+			color: blue;
+		}
+	</style>	
+	</head>
 <body>
 	
 	<p>Whitespace beyond a single
@@ -26,20 +33,37 @@
 
 <pre>
 	Unless
-	You're inside
-	a
-&lt;pre&gt;&lt;/pre&gt; tag
+		You're inside
+  a
+&lt;pre&gt;&lt;/pre&gt; element
 </pre>
 
-<p>Illustrating the &amp;nbsp; non-breaking space entity</p>
+<h2>Illustrating the &amp;nbsp; non-breaking space entity</h2>
+<p>Non-breaking spaces have two interesting properties: 1) lines will not break 
+	 on a non-breaking space (thus, the name) and 2) they do not collapse.</p>
 <p>
 	Lorem ipsum dolor sit amet consectetur,
 	adipisicing elit.
 	Tempora, ut animi fuga nam quis eum amet
 	quisquam voluptatem&nbsp;voluptate in eos ad culpa
 	quas delectus perspiciatis corrupti
-	cupiditate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ullam corporis!
+	cupiditate<mark>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mark>ullam corporis!
 </p>
+
+<h2>Tags that change whitespace handling</h2>
+<ul>
+	<li>paragraph <code>&lt;p&gt;</code></li>
+	<li>break &lt;br&gt;</li>
+	<li><code>&lt;pre&gt;</code> for preformatted</li>
+	<li>&lt;blockquote&gt; for indentation</li>
+</ul>
+
+<h3>CSS that changes whitespace handling</h3>
+<ul>
+	<li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space">white-space</a></code>: Directly changes whitespace handling</li>
+	<li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin">margin</a></code>: Add space outside the element</li>
+	<li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding">padding</a>: Add space inside the element</code></li>
+</ul>
 
 </body>
 </html>
