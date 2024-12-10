@@ -7,10 +7,10 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"format:write": "prettier . --write",
+		"preview": "vite preview",
 		"format": "prettier . --check",    
+		"format:write": "prettier . --write",
 		"lint": "eslint .",
-		"lint:fix": "eslint . --fix",
-		"preview": "vite preview"
+		"lint:fix": "eslint . --fix"
 	}
 }
