@@ -141,7 +141,7 @@ Remember that the structure of a table, generally, is
 
 You will need a table headers section, with the column headers, and then a table row for each of the rows of data.
 
-### Send/Receive Payments: Add Form
+### Lab 5: Send/Receive Payments: Add Form
 
 The Send/Receive Payments `send-receive.html` page is a placeholder. Let's make that better!
 
@@ -164,7 +164,7 @@ Onto the form:
 3. Add a submit button labeled "Send".
 4. Check out the form in the browser. Don't worry about the layout, which we will fix soon.
 
-### Send/Receive Payements: Improve form with validations
+### Lab 6: Send/Receive Payements: Improve form with validations
 
 Let's make the form a little bit better. We will add some validations to the form. After each of the validations, try submitting the form to see if the validation is successful.
 
@@ -175,7 +175,7 @@ Let's make the form a little bit better. We will add some validations to the for
 1. The Amount is also required, must be positive, have only two decimal places, and be between $0.01 and $1000.00
 1. The Reason can't be longer than 255 characters
 
-### Account Settings: Add form
+### Lab 7: Account Settings: Add form
 
 Now that we know forms pretty well, let's add a form all at once. Account settings should have the following:
 
@@ -190,22 +190,48 @@ Now that we know forms pretty well, let's add a form all at once. Account settin
 
 ## CSS Exercises
 
-### Navbar: Flexbox Layout
+### Lab 8: Navbar: CSS Setup
 
 Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve it as follows:
 
 1. Create a file `navbar.html`. We will use this as our baseline. It can be a basic HTML page.
-2. Decide whether you want to use an unordered list, or divs, to set up the navbar. Either one will work.
+1. Create a second file `navbar.css` which will have all the CSS for navbar.html`
+1. Link `navbar.css` in `navbar.html`
+1. Also link `/css/reset.css` in `navbar.html`. Notice how `navbar.html` looks different now
+1. Best practices first: add a class to the `nav` element and call it `navbar-list`. 
+1. Change the appropriate elements under `.navbar-list` so that the following are true
+  - List items do not have bullets
+  - Anchors do not have underlines
+  - Choose a color for list items; suggestion: #3a6bbf
+1. Take a look at your page and see if you have the changes you want
 
-- If you use an unordered list, the `ul` is the container and the `li` elements are the children.
-- If you use `div`s, the `nav` element is the container and the `div`s are the children
-- You can always copy and paste the navbar from one of the existing pages into `navbar.html`.
+### Lab 9: Navbar: Display
 
-3. If you use an unordered list, you'll need to remove the `padding` and the `list-style-type` properties or things will look... weird.
-4. Set the container up as a flexbox
-5. Set up the children with a `flex` config
+We're going to change the way the navbar elements are displayed
 
-Check out the results!
+1. Remove any padding from the unordered list
+1. Target the appropriate element in the unordered list so that it displays in-line
+1. Update the padding for list items to something appropriate so there's a little horizontal space on either side
+1. Try getting the list items to equally take up space in the width of the screen
+1. Center the text in each element in the navbar
+
+### Lab 10: Navbar: Pseudo-classes
+
+We will use psuedo-classes to respond to user interactions
+
+1. Turn off the behavior where a visited link has a different color from an unvisited link
+1. When hovering over one of the navbar elements, swap the background and text colors (for example, if it was originally black text on a white background, make it white text on a black background)
+
+### Lab 11: Navbar: Flexbox
+
+There are limitations to using `inline-block`. Let's swap it out for flexbox
+
+1. Set the display to flex on the appropriate element
+1. Size the elements so that they expand to fill the available space
+1. Modify the container to have *space around* the various elements
+1. Put a small *gap* between the various elements
+
+### Lab 12: Navbar: Fonts and icons
 
 ### Send/Receive or Account Settings: Grid Layout
 
