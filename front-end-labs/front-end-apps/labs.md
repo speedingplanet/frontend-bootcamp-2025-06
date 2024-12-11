@@ -71,7 +71,7 @@ Starter command: Keep using your code, or, for a fresh start, run `npm run begin
 The home page needs a little bit more organization:
 
 - The `h1` should be inside a `header`
-- Change the `p` tag to a `nav` tag to better indicate its semantic role
+- Wrap the `ul` in a `nav` tag to better indicate its semantic role
 - Below the `nav`, add a `main` element. This will be where the main content of the pages goes.
   - Within `main`, add an `h2` with the content "ZipPay Home"
 - Below the `main`, add a `footer` with the following information:
@@ -168,9 +168,11 @@ Onto the form:
 
 Let's make the form a little bit better. We will add some validations to the form. After each of the validations, try submitting the form to see if the validation is successful.
 
-1. The "Account" should default to the current user's default account. We don't have that information right now, so you can set the default value to "Default account"
-1. The Recipient can't be empty. All of our usernames are at least four characters long. Validate this field
-1. The Amount must be positive, have only two decimal places, and be between $0.01 and $1000.00
+1. The "Account" field should be a `select` list if it isn't already
+1. It should also default to the current user's default account. We don't have that information right now, so you can set the default value to "Default account"
+1. Also add a few other options like "Checking" and "Savings"
+1. The Recipient can't be empty. All of our usernames are at least four characters long. Validate this field accordingly.
+1. The Amount is also required, must be positive, have only two decimal places, and be between $0.01 and $1000.00
 1. The Reason can't be longer than 255 characters
 
 ### Account Settings: Add form
@@ -192,17 +194,16 @@ Now that we know forms pretty well, let's add a form all at once. Account settin
 
 Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve it as follows:
 
-1. Open the file `navbar.html`. We will use this as our baseline. It can be a basic HTML page.
-2. If you want a starter version, you can run this command from the `front-end-labs` directory: `git checkout solutions -- navbar.html`
-3. Decide whether you want to use an unordered list, or divs, to set up the navbar. Either one will work.
+1. Create a file `navbar.html`. We will use this as our baseline. It can be a basic HTML page.
+2. Decide whether you want to use an unordered list, or divs, to set up the navbar. Either one will work.
 
 - If you use an unordered list, the `ul` is the container and the `li` elements are the children.
 - If you use `div`s, the `nav` element is the container and the `div`s are the children
 - You can always copy and paste the navbar from one of the existing pages into `navbar.html`.
 
-4. If you use an unordered list, you'll need to remove the `padding` and the `list-style-type` properties or things will look... weird.
-5. Set the container up as a flexbox
-6. Set up the children with a `flex` config
+3. If you use an unordered list, you'll need to remove the `padding` and the `list-style-type` properties or things will look... weird.
+4. Set the container up as a flexbox
+5. Set up the children with a `flex` config
 
 Check out the results!
 
