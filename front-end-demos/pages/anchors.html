@@ -11,6 +11,15 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>HTML Anchor tags</title>
+		<style>
+			.target:hover {
+				border: 2px green dotted;
+			}
+
+			.target {
+				text-decoration: underline;
+			}
+		</style>
 	</head>
 	<body>
 		<h1 id="page-top">Different kinds of anchors</h1>
@@ -51,7 +60,13 @@
 			</li>
 			<li>
 				<a href="#page-bottom">Link</a>
-				to the bottom of the page
+				to the bottom of the page, using an
+				<code>id</code>
+				attribute as a target
+			</li>
+			<li>
+				<a href="https://github.com/reduxjs/redux?tab=readme-ov-file#learn-redux">Link</a>
+				to a target id on an external page. 
 			</li>
 			<li style="height: 150vh">Scroll down</li>
 			<li id="page-bottom">Bottom of the page</li>
@@ -60,5 +75,13 @@
 				to top
 			</li>
 		</ul>
+
+		<p>The code below this will highlight elements with an <code>id</code> attribute.</p>
+		<script>
+			let elementsWithId = document.querySelectorAll('[id]');
+			elementsWithId.forEach((el) => {
+				el.classList.add('target');
+			});
+		</script>
 	</body>
 </html>

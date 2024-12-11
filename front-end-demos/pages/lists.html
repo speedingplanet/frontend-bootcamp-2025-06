@@ -7,9 +7,14 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Lists</title>
+		<style>
+			dt {
+				font-weight: bold;
+			}
+		</style>
 	</head>
 	<body>
-		<p>Unordered list</p>
+		<h2>Unordered list</h2>
 		<!-- Deprecated (more or less) -->
 		<!-- <ul type="square"> -->
 		<!-- Preferred: use CSS for the same effect -->
@@ -19,12 +24,46 @@
 			<li>Bananas</li>
 		</ul>
 
-		<p>Ordered list</p>
+		<h2>Ordered list</h2>
 		<!-- <ol style="list-style: upper-roman;"> -->
 		<ol>
 			<li>Spinach</li>
 			<li>Kale</li>
 			<li>Lettuce</li>
 		</ol>
+
+		<h2>Description List</h2>
+		<p>Description list, terms, details</p>
+		<dl>
+			<dt>New York</dt>
+			<dd>Mets</dd>
+			<dd>Yankees</dd>
+			<dt>Chicago</dt>
+			<dd>Cubs</dd>
+			<dd>White Sox</dd>
+			<dt>Atlanta</dt>
+			<dd>Braves</dd>
+			<dt>San Francisco</dt>
+			<dd>Giants</dd>
+		</dl>
+
+		<p>What's a use case for a description list? How about a menu system?</p>
+
+		<p>Implementing a menu in a description list</p>
+		<dl>
+			<dt>File</dt>
+			<dd>Open</dd>
+			<dd>Close</dd>
+			<dd>Save</dd>
+			<dt>Edit</dt>
+			<dd>Copy</dd>
+			<dd>Cut</dd>
+			<dd>Paste</dd>
+			<dt>View</dt>
+			<dd>Compact</dd>
+			<dd>Detailed</dd>
+			<dd>Mobile</dd>
+			<dd>Desktop</dd>
+		</dl>
 	</body>
 </html>
