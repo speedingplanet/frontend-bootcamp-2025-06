@@ -11,9 +11,48 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Tables</title>
+		<style>
+
+			table {
+				border-collapse: collapse;
+			}
+
+			th, td {
+				border: 2px black solid;
+			}
+		</style>
 	</head>
 	<body>
 		<h1>HTML Tables</h1>
+
+		<p>Tables have this structure:
+<!-- table>(thead>tr>th*3>{Header $})+(tbody>tr*2>td*3>{Row $ Item $$}) -->
+<pre>
+&lt;table&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Header 1&lt;/th&gt;
+			&lt;th&gt;Header 2&lt;/th&gt;
+			&lt;th&gt;Header 3&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Row 1 Item 1&lt;/td&gt;
+			&lt;td&gt;Row 2 Item 2&lt;/td&gt;
+			&lt;td&gt;Row 3 Item 3&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Row 1 Item 1&lt;/td&gt;
+			&lt;td&gt;Row 2 Item 2&lt;/td&gt;
+			&lt;td&gt;Row 3 Item 3&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+
+		</p>
+
 		<table>
 			<thead>
 				<tr>
@@ -26,20 +65,21 @@
 			<tbody>
 				<tr>
 					<td>John</td>
-					<td>Paxton</td>
-					<td>Nutley</td>
-					<td>NJ</td>
+					<td rowspan="3">Paxton</td>
+					<td colspan="2">Nutley</td>
+					<!-- <td>NJ</td> -->
+					<!-- <td>USA</td> -->
 				</tr>
 				<tr>
 					<td>Dan</td>
-					<td>Paxton</td>
-					<td>Bloomfield</td>
+					<!-- Second column overwritten by the rowspan, above -->
+					<td>Bloomfield</td> <!-- Implicitly the third column -->
 					<td>NJ</td>
 				</tr>
 				<tr>
 					<td>Tim</td>
-					<td>Paxton</td>
-					<td>Jacksonville</td>
+					<!-- Second column overwritten by the rowspan, above -->
+					<td>Jacksonville</td> <!-- Implicitly the third column -->
 					<td>FL</td>
 				</tr>
 				<tr>

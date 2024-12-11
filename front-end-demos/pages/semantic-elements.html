@@ -14,26 +14,38 @@
 	</head>
 	<body>
 		<h1>Semantic elements</h1>
+		<!-- Main content div -->
 		<div>
-			<!-- Banner, changes with selection -->
-			<div><h3>Customers</h3></div>
-			<!-- Navigation, determines Banner and Main -->
 			<div>
-				<ul>
-					<li>Customers</li>
-					<li>Orders</li>
-					<li>Products</li>
-					<li>Admin</li>
-				</ul>
-			</div>
-			<!-- Main content div, set by navigation -->
-			<div>
-				<p>Content goes here, based on the section clicked on</p>
+				<!-- Banner, changes with selection -->
+				<div><h3>Customers</h3></div>
+				<!-- Navigation, determines Banner and Main -->
+				<div>
+					<ul>
+						<li>Customers</li>
+						<li>Orders</li>
+						<li>Products</li>
+						<li>Admin</li>
+					</ul>
+				</div>
+
+				<!-- Arbitrary grouping of content -->
+				<div>
+					<!-- Header, but just for this section -->
+					<div><h4>Header for just this section</h4></div>
+					<!-- Navigation, again, just for this section -->
+					<div>Sub navigation within just this section</div>
+
+					<!-- Footer, just for this section -->
+					<div>Footer for this section</div>
+				</div>
+				<div><p>Main footer</p></div>
 			</div>
 		</div>
 
 		<hr />
 
+		<!-- Main content -->
 		<main>
 			<!-- Banner, changes with selection -->
 			<header><h3>Customers</h3></header>
@@ -46,18 +58,25 @@
 					<li>Admin</li>
 				</ul>
 			</nav>
-			<!-- Section of content, set by navigation -->
+			<!-- Section of content, should make sense semantically -->
 			<section>
+				<!-- Header, but just for this section -->
 				<header><h4>Header for just this section</h4></header>
+				<!-- Navigation, again, just for this section -->
 				<nav>Sub navigation within just this section</nav>
+
+				<!-- Footer, just for this section -->
 				<footer>Footer for this section</footer>
 			</section>
-			<footer><p>Copyright and other footer stuff</p></footer>
+
+			<!-- Footer, but it belongs to main -->
+			<footer><p>Main footer</p></footer>
 		</main>
 
 		<!-- Page-level footer -->
 		<footer>
 			<hr />
+			<p>Page-level footer</p>
 			<p>
 				Return
 				<a href="/index.html">Home</a>
