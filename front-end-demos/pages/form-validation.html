@@ -13,17 +13,17 @@
 			<div>
 				<label for="text-example">Text example:</label>
 				<input
-					type="email"
+					type="text"
 					name="text-example"
 					id="text-example"
 					minlength="5"
 					maxlength="20"
 					required
 					pattern="\p{Uppercase_Letter}\p{Lowercase_Letter}+"
-				/>
+					/>
 				<!-- pattern takes advantage of Unicode character classes
 				 Older version
-				 pattern="[A-Z][a-z]+"
+					pattern="[A-Z][a-z]+"
 
 				Short, unicode-aware
 				pattern="\p{Lu}\p{L}+"
@@ -44,6 +44,7 @@
 					type="number"
 					name="numeric-example"
 					id="numeric-example"
+					required
 					min="10"
 					max="10000"
 					step="2"
