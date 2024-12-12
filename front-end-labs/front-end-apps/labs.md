@@ -164,7 +164,7 @@ Onto the form:
 3. Add a submit button labeled "Send".
 4. Check out the form in the browser. Don't worry about the layout, which we will fix soon.
 
-### Lab 6: Send/Receive Payements: Improve form with validations
+### Lab 6: Send/Receive Payments: Improve form with validations
 
 Let's make the form a little bit better. We will add some validations to the form. After each of the validations, try submitting the form to see if the validation is successful.
 
@@ -195,6 +195,7 @@ Now that we know forms pretty well, let's add a form all at once. Account settin
 Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve it as follows:
 
 1. Create a file `navbar.html`. We will use this as our baseline. It can be a basic HTML page.
+1. Edit `index.html` to add a link to `navbar.html`
 1. Create a second file `navbar.css` which will have all the CSS for navbar.html`
 1. Link `navbar.css` in `navbar.html`
 1. Also link `/css/reset.css` in `navbar.html`. Notice how `navbar.html` looks different now
@@ -207,7 +208,7 @@ Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve 
 
 ### Lab 9: Navbar: Display
 
-We're going to change the way the navbar elements are displayed
+We're going to change the way the navbar elements are displayed. Keep working in `navbar.html` and `navbar.css`.
 
 1. Remove any padding from the unordered list
 1. Target the appropriate element in the unordered list so that it displays in-line
