@@ -12,12 +12,12 @@
 		/>
 		<title>Tables</title>
 		<style>
-
 			table {
 				border-collapse: collapse;
 			}
 
-			th, td {
+			th,
+			td {
 				border: 2px black solid;
 			}
 		</style>
@@ -25,8 +25,11 @@
 	<body>
 		<h1>HTML Tables</h1>
 
-		<p>Tables have this structure:
-<!-- table>(thead>tr>th*3>{Header $})+(tbody>tr*2>td*3>{Row $ Item $$}) -->
+		<p>
+			Tables have this structure:
+			<!-- table>(thead>tr>th*3>{Header $})+(tbody>tr*2>td*3>{Row $ Item $$}) -->
+		</p>
+
 <pre>
 &lt;table&gt;
 	&lt;thead&gt;
@@ -51,8 +54,6 @@
 &lt;/table&gt;
 </pre>
 
-		</p>
-
 		<table>
 			<thead>
 				<tr>
@@ -73,13 +74,15 @@
 				<tr>
 					<td>Dan</td>
 					<!-- Second column overwritten by the rowspan, above -->
-					<td>Bloomfield</td> <!-- Implicitly the third column -->
+					<td>Bloomfield</td>
+					<!-- Implicitly the third column -->
 					<td>NJ</td>
 				</tr>
 				<tr>
 					<td>Tim</td>
 					<!-- Second column overwritten by the rowspan, above -->
-					<td>Jacksonville</td> <!-- Implicitly the third column -->
+					<td>Jacksonville</td>
+					<!-- Implicitly the third column -->
 					<td>FL</td>
 				</tr>
 				<tr>
