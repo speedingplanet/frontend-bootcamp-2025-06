@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Margin vs Padding</title>
+		<style>
+			.container, .no-collapse, .collapse {
+				border: 4px black solid;
+				margin-bottom: 15px;
+			}
+
+			h2 {
+				text-align: center;
+			}
+
+			.padding-box, .margin-box {
+				display: inline-block;
+			}
+
+			.left, .top {
+				border: 4px green solid;
+			}
+
+			.right, .bottom {
+				border: 4px blue solid;
+			}
+
+			.margin-box.left {
+				margin-right: 25px;
+			}
+
+			.padding-box.right {
+				box-sizing: border-box; /* Includes content, padding, and the border */
+				width: 100px; /* the border, padding, and content combined should be 100px */
+				padding-left: 25px;
+			}
+
+			.collapse-box.top {
+				margin-bottom: 25px;
+			}
+
+			.collapse-box.bottom {
+				margin-top: 35px;
+			}
+
+			.no-collapse .margin-box.right {
+				margin-left: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Margin vs Padding</h1>
+			<hr />
+		</header>
+
+		<div class="container">
+			<h2>Spacing with Margin</h2>
+			<div class="margin-box left">Left Box</div>
+			<div class="margin-box right">Right Box</div>
+		</div>
+
+		<div class="container">
+			<h2>Spacing with padding</h2>
+			<div class="padding-box left">Left Box</div>
+			<div class="padding-box right">Right Box</div>
+		</div>
+
+		<div class="no-collapse">
+			<h2>Margin Collapse Horizontal</h2>
+			<div class="margin-box left">Left Box</div>
+			<div class="margin-box right">Right Box</div>
+		</div>
+
+		<div class="collapse">
+			<h2>Margin Collapse Vertical</h2>
+			<div class="collapse-box top">Top Box</div>
+			<div class="collapse-box bottom">Bottom Box</div>
+		</div>
+	</body>
+</html>
