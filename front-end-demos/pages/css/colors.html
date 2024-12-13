@@ -28,16 +28,18 @@
 				background-color: #0af; /* #00AAFF */
 			}
 
+			/* 0-255 integer or 0%-100% percentage */
 			.box:nth-child(4) {
-				background-color: rgb(0, 0, 255);
+				background-color: rgb(100% 0 0);
 			}
 
 			.box:nth-child(5) {
-				background-color: rgb(0, 0, 255);
+				background-color: rgb(0 0 255);
 			}
 
+			/* Add a transparency value, separated with a slash */
 			.box:nth-child(6) {
-				background-color: rgba(255, 0, 0, 50%);
+				background-color: rgb(255 0 0 / 50%);
 				margin-top: -60px;
 			}
 		</style>
