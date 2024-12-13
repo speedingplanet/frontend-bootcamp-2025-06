@@ -175,19 +175,6 @@ Let's make the form a little bit better. We will add some validations to the for
 1. The Amount is also required, must be positive, have only two decimal places, and be between $0.01 and $1000.00
 1. The Reason can't be longer than 255 characters
 
-### Lab 7: Account Settings: Add form
-
-Now that we know forms pretty well, let's add a form all at once. Account settings should have the following:
-
-1. First Name field, required, minimum length 2, alphabetical characters, spaces and dashes only. [The format is a challenge, feel free to come back to it when you get the rest of the form done]
-2. Same for Last Name
-3. Same for City
-4. Add a State/Province field as a drop-down of US states and Canadian provinces. Don't write the drop-down yourself. Search on the internet for something like "html us states select list" and copy and paste that. Add on Canadian provinces as well.
-5. Postal Code: This could be challenging
-6. Email: Is there a custom field that could be helpful here?
-7. Telephone: Similar?
-8. Account type: Select from one of "Personal", "Corporate" or "Other". Is there a form widget that could help here? Select "Personal" by default.
-
 ## CSS Exercises
 
 ### Lab 8: Navbar: CSS Setup
@@ -232,36 +219,38 @@ There are limitations to using `inline-block`. Let's swap it out for flexbox
 1. Modify the container to have *space around* the various elements
 1. Put a small *gap* between the various elements
 
-### Lab 12: Navbar: Fonts and icons
+## Lab 12: Putting it all together. Part 1: Form HTML
 
-### Send/Receive or Account Settings: Grid Layout
+Now that we know grids forms pretty well, let's add a form all at once. Account settings should have the following:
 
-The Send/Receive and Account Settings forms have the functionality we need, but does have any sort of useful or pleasing layout.
+1. First Name field, required, minimum length 2, alphabetical characters, spaces and dashes only. [The format is a challenge, feel free to come back to it when you get the rest of the form done]
+2. Same for Last Name
+3. Same for City
+4. Add a State/Province field as a drop-down of US states and Canadian provinces. Don't write the drop-down yourself. Search on the internet for something like "html us states select list" and copy and paste that. Add on Canadian provinces as well.
+5. Postal Code: This could be challenging
+6. Email: Is there a custom field that could be helpful here?
+7. Telephone: Similar?
+8. Account type: Select from one of "Personal", "Corporate" or "Other". Is there a form widget that could help here? Select "Personal" by default.
 
-1. Pick either account-settings.html, or send-receive.html
-2. If you want a starter version, you can run this command from the `front-end-labs` directory: `git checkout solutions -- account-settings.html`
-3. Organize the HTML of the form you have chosen so that it will work with a grid. Some questions:
+### Lab 12: Putting it all together. Part 2: Grid Layout
+
+The Account Settings form has the functionality we need, but does not have any sort of useful or pleasing layout.
+
+1. Copy our new, better navbar into the account-settings.html page. 
+2. Organize the HTML of the form you have chosen so that it will work with a grid. Some questions:
 
 - Does each form element have to be in a div?
 - Does each label have to be in a div?
 - Do we wrap the form element plus the label into a container div, or leave them as-is?
 - Do you see any other particular gotchas?
 
-4. Design a CSS grid for the form. There are many paths to success here.
-   A suggestion: think of the grid as two columns, the left column could hold the labels
-   The right column could hold the form fields. But there are many possible variations
-   and you should do what makes sense to you!
-5. See if the grid layout is working in your browser!
+3. Design a CSS grid for the form. There are many paths to success here.
+   - A suggestion: think of the grid as two columns, the left column could hold the labels. The right column could hold the form fields. 
+   - Alternatively, a four column grid, which prizes monitor space over flexibility
+   - Or maybe use the grid to group like elements (name info goes together, so does address info, for example)
+   - Use the grid layout that makes most sense to you. There are many possible variations!
 
-## Navbar: Putting it all together.
+### Bonus Lab: Navbar: Fonts and icons
 
-Take a look at data/navbar-design.png: ![Design for our Navbar](data/navbar-design.png).
+We'll work on this one together.
 
-What would we need to build out something like this in navbar.html? Some suggestions:
-
-1. Font from Google (take a look at front-end-demos/css/fonts.html for an example)
-2. Icons also from Google (front-end-demos/css/icons.html to see an example of this)
-3. Flexbox layout for the content
-4. Font size and coloring as well
-5. Spacing between elements
-6. And when you hover over an icon, it has a different background color
