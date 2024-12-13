@@ -186,11 +186,13 @@ Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve 
 1. Create a second file `navbar.css` which will have all the CSS for navbar.html`
 1. Link `navbar.css` in `navbar.html`
 1. Also link `/css/reset.css` in `navbar.html`. Notice how `navbar.html` looks different now
-1. Best practices first: add a class to the `nav` element and call it `navbar-list`. 
+1. Best practices first: add a class to the `nav` element and call it `navbar-list`.
 1. Change the appropriate elements under `.navbar-list` so that the following are true
-  - List items do not have bullets
-  - Anchors do not have underlines
-  - Choose a color for list items; suggestion: #3a6bbf
+
+- List items do not have bullets
+- Anchors do not have underlines
+- Choose a color for list items; suggestion: #3a6bbf
+
 1. Take a look at your page and see if you have the changes you want
 
 ### Lab 9: Navbar: Display
@@ -216,27 +218,27 @@ There are limitations to using `inline-block`. Let's swap it out for flexbox
 
 1. Set the display to flex on the appropriate element
 1. Size the elements so that they expand to fill the available space
-1. Modify the container to have *space around* the various elements
-1. Put a small *gap* between the various elements
+1. Modify the container to have _space around_ the various elements
+1. Put a small _gap_ between the various elements
 
 ## Lab 12: Putting it all together. Part 1: Form HTML
 
 Now that we know grids forms pretty well, let's add a form all at once. Account settings should have the following:
 
-1. First Name field, required, minimum length 2, alphabetical characters, spaces and dashes only. [The format is a challenge, feel free to come back to it when you get the rest of the form done]
-2. Same for Last Name
-3. Same for City
-4. Add a State/Province field as a drop-down of US states and Canadian provinces. Don't write the drop-down yourself. Search on the internet for something like "html us states select list" and copy and paste that. Add on Canadian provinces as well.
-5. Postal Code: This could be challenging
-6. Email: Is there a custom field that could be helpful here?
-7. Telephone: Similar?
-8. Account type: Select from one of "Personal", "Corporate" or "Other". Is there a form widget that could help here? Select "Personal" by default.
+1. **First Name** field: required, minimum length 2, alphabetical characters, spaces and dashes only. [The format is a challenge, feel free to come back to it when you get the rest of the form done]
+2. Same for **Last Name**
+3. Same for **City**
+4. Add a **State/Province** field as a drop-down of US states and Canadian provinces. Don't write the drop-down yourself. Search on the internet for something like "html us states select list" and copy and paste that. Add on Canadian provinces as well.
+5. **Postal Code**: This could be challenging
+6. **Email**: Is there a custom field that could be helpful here?
+7. **Telephone**: Similar?
+8. **Account type**: Select from one of "Personal", "Corporate" or "Other". Is there a form widget that could help here? Select "Personal" by default.
 
 ### Lab 12: Putting it all together. Part 2: Grid Layout
 
 The Account Settings form has the functionality we need, but does not have any sort of useful or pleasing layout.
 
-1. Copy our new, better navbar into the account-settings.html page. 
+1. Copy our new, better navbar into the account-settings.html page.
 2. Organize the HTML of the form you have chosen so that it will work with a grid. Some questions:
 
 - Does each form element have to be in a div?
@@ -245,7 +247,7 @@ The Account Settings form has the functionality we need, but does not have any s
 - Do you see any other particular gotchas?
 
 3. Design a CSS grid for the form. There are many paths to success here.
-   - A suggestion: think of the grid as two columns, the left column could hold the labels. The right column could hold the form fields. 
+   - A suggestion: think of the grid as two columns, the left column could hold the labels. The right column could hold the form fields.
    - Alternatively, a four column grid, which prizes monitor space over flexibility
    - Or maybe use the grid to group like elements (name info goes together, so does address info, for example)
    - Use the grid layout that makes most sense to you. There are many possible variations!
@@ -253,4 +255,3 @@ The Account Settings form has the functionality we need, but does not have any s
 ### Bonus Lab: Navbar: Fonts and icons
 
 We'll work on this one together.
-
