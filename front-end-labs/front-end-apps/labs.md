@@ -2,11 +2,11 @@
 
 ## HTML Exercises
 
-### Zippay App: Home page
+### ZipPay App: Home page
 
 Starting command: `npm run dev`
 
-We have a home page that points to "To-dos", which we will build together, "Zippay" which you will build, and "Zippay Finished" which you can use to see completed versions of the Zippay app.
+We have a home page that points to "To-dos", which we will build together, "ZipPay" which you will build, and "ZipPay Finished" which you can use to see completed versions of the ZipPay app.
 
 Working in `zippay/index.html`:
 
