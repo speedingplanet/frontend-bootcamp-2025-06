@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "3.0.0",
 	"type": "module",
-  "author": "John Paxton <pax@speedingplanet.com>",
+	"author": "John Paxton <pax@speedingplanet.com>",
 	"scripts": {
 		"dev": "node scripts/check-labs.js && vite",
 		"build": "tsc && vite build",
@@ -20,7 +20,13 @@
 		"tsc": "tsc -p tsconfig.json"
 	},
 	"dependencies": {
-		"fs-extra": "^11.2.0",
-		"react-toastify": "^10.0.5"
-	}
+		"react-toastify": "^11.0.5"
+	},
+	"description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+	"main": "index.js",
+	"directories": {
+		"test": "tests"
+	},
+	"devDependencies": {},
+	"license": "ISC"
 }

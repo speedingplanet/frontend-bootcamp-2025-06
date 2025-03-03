@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "3.0.0",
 	"type": "module",
-  "author": "John Paxton <pax@speedingplanet.com>",
+	"author": "John Paxton <pax@speedingplanet.com>",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
@@ -22,5 +22,11 @@
 	"devDependencies": {
 		"@types/redux-logger": "^3.0.13",
 		"redux-logger": "^3.0.6"
-	}
+	},
+	"description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+	"main": "index.js",
+	"directories": {
+		"test": "tests"
+	},
+	"license": "ISC"
 }

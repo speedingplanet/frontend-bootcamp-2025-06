@@ -2,7 +2,7 @@
   "name": "front-end-labs",
   "version": "3.0.0",
   "main": "index.js",
-	"type": "module",
+  "type": "module",
   "author": "John Paxton <pax@speedingplanet.com>",
   "scripts": {
     "format": "prettier . --check",
@@ -13,8 +13,5 @@
   },
   "keywords": [],
   "license": "ISC",
-  "description": "",
-	"devDependencies": {
-		"front-end-apps": "file:front-end-apps"
-	}
+  "description": ""
 }

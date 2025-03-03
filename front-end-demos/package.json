@@ -3,14 +3,18 @@
 	"private": true,
 	"version": "3.0.0",
 	"type": "module",
-  "author": "John Paxton <pax@speedingplanet.com>",
+	"author": "John Paxton <pax@speedingplanet.com>",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
-		"format": "prettier . --check",    
+		"format": "prettier . --check",
 		"format:write": "prettier . --write",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix"
-	}
+	},
+	"main": "index.js",
+	"devDependencies": {},
+	"license": "ISC",
+	"description": ""
 }
