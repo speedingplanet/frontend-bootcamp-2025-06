@@ -3,6 +3,7 @@ backups
 .vscode
 package.json
 package-lock.json
+*.code-workspace
 bootstrap.css
 pages/html-experiments.html
 pages/void-vs-self-closing.html

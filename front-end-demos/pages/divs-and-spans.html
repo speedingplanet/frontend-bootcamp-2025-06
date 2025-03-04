@@ -1,46 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Divs and Spans</title>
+	</head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Divs and Spans</title>
-</head>
-
-<body>
-	<div>
-	<h1>Divs and Spans</h1>
-	<p>Let's talk about container elements</p>
-
-	<p>This text is before a span.
-		<span>This text is inside a span.</span>
-		This text is after a span.
-	</p>
-
-	<p>Outside the span <span>Level 1 <span>Level 2 <span>Level 3</span></span></span></span> after the nested spans</p>
-
-	<div>
-		This is div 1.
-	</div>
-	<div>
-		This is div 2.
-	</div>
-	<div>
-		This is div 3.
-	</div>
-</div>
-
-
-	<h2>Nested divs</h2>
-	<div>
-		Great-grandparent
+	<body>
 		<div>
-			Grandparent
-			<div>Parent
-				<div>Child</div>
+			<h1>Divs and Spans</h1>
+			<p>Let's talk about container elements</p>
+
+			<p>
+				This text is before a span.
+				<span>This text is inside a span.</span>
+				This text is after a span.
+			</p>
+
+			<p>
+				Outside the span
+				<span>
+					Level 1
+					<span>
+						Level 2
+						<span>Level 3</span>
+					</span>
+				</span>
+				after the nested spans
+			</p>
+
+			<div>This is div 1.</div>
+			<div>This is div 2.</div>
+			<div>This is div 3.</div>
+		</div>
+
+		<h2>Nested divs</h2>
+		<div>
+			Great-grandparent
+			<div>
+				Grandparent
+				<div>
+					Parent
+					<div>Child</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</body>
-
+	</body>
 </html>
