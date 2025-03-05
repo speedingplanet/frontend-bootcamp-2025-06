@@ -8,17 +8,26 @@
 		/>
 		<title>CSS Colors</title>
 		<style>
+
 			.box {
 				width: 100px;
 				height: 100px;
 				border: 2px black solid;
+				/*
+				border-width: 5px;
+				border-color: black;
+				border-style: dotted;
+				*/
 				margin-bottom: 10px;
 			}
 
+			/* :first-child is a pseudo-class */
 			.box:first-child {
+				/* Using one of 166 or so color names */
 				background-color: blue;
 			}
 
+			/* :nth-child is a pseudo-class */
 			.box:nth-child(2) {
 				/* Red, Green, Blue, 0-255 expressed in Hex: 00-FF */
 				background-color: #0000ff;
