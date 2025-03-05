@@ -4,6 +4,47 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CSS Selectors</title>
+	<style>
+		/* select by tag, #id, .class, or [attribute] */
+
+		/* Tags */
+		li {
+			font-family: Helvetica;
+		}
+
+		h2 {
+			text-decoration: underline;
+		}
+
+		/* IDs */
+		#oranges {
+			color: orange
+		}
+
+		/* Class: arbitrarily apply styles */
+		.green-fruit {
+			color: green
+		}
+
+		.underline {
+			text-decoration: underline;
+		}
+
+		/* Attributes */
+		/* Presence: [title] */
+		/* Value: [title=whatever] */
+		[title] {
+			font-style: italic;
+		}
+
+		/* Add pseudo-classes */
+		/* Pseudo-classes pick elements that would be tough to reach  */
+		li:first-child {
+			background-color: red;
+			color: white;
+		}
+
+	</style>
 </head>
 <body>
 	<main>
@@ -11,6 +52,21 @@
 			<h1>CSS Selectors</h1>
 			<hr>
 		</header>
+		<section>
+			<h2>Lists</h2>
+			<ul>
+				<li>🍎 Apples</li>
+				<li class="green-fruit underline">🍐 Pears</li>
+				<li id="oranges">🍊 Oranges</li>
+				<li>🍌 Bananas</li>
+				<li class="green-fruit">🥝 Kiwi</li>
+				<li>🍋 Lemons</li>
+				<li class="green-fruit">🍋‍🟩 Limes</li>
+				<li>🍇 Grapes</li>
+				<li>🍓 Strawberries</li>
+				<li title="Berries!">🫐 Blueberries</li>
+			</ul>
+		</section>
 	</main>
 </body>
 </html>
