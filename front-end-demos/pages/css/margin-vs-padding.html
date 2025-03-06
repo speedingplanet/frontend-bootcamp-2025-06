@@ -49,11 +49,26 @@
 			}
 
 			.collapse-box.bottom {
-				margin-top: 35px;
+				margin-top: 40px;
 			}
 
 			.no-collapse .margin-box.right {
 				margin-left: 25px;
+			}
+
+			.box-sizing {
+				height: 50px;
+				margin-bottom: 15px;
+				padding: 10px;
+			}
+
+			.box-sizing.left {
+				/* Default */
+				box-sizing: content-box; 
+			}
+
+			.box-sizing.right {
+				box-sizing: border-box;
 			}
 		</style>
 	</head>
@@ -62,6 +77,12 @@
 			<h1>Margin vs Padding</h1>
 			<hr />
 		</header>
+
+		<div class="container">
+			<h2>Box-sizing</h2>
+			<div class="box-sizing left">No box sizing</div>
+			<div class="box-sizing right">Border-box</div>
+		</div>
 
 		<div class="container">
 			<h2>Spacing with Margin</h2>

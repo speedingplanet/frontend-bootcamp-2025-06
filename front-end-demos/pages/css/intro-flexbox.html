@@ -13,7 +13,7 @@
 			}
 
 			section {
-				margin-bottom: 4vh;
+				margin-bottom: 4vh; /* viewport height */
 			}
 
 			.container {
@@ -24,6 +24,15 @@
 
 			.child {
 				border: 2px red dashed;
+			}
+
+			section.no-flex .container {
+				/* Default display value for a section/div */
+				display:block;
+			}
+
+			.no-flex .child{
+				height: 40px;
 			}
 
 			.plain-flex .child {
@@ -49,6 +58,15 @@
 				width: 150px;
 			}
 
+			.flex-wrap .child {
+				height: 50px;
+				width: 150px;
+			}
+
+			.flex-wrap .container {
+				flex-wrap: wrap;
+			}
+
 			.flex-with-space .container {
 				/* 
 				flex-start (default)
@@ -58,6 +76,8 @@
 				space-around
 				space-between
 				*/
+
+				/* justify-content: flex-start; */
 				/* justify-content: flex-end; */
 				/* justify-content: center; */
 				justify-content: space-between;
@@ -75,9 +95,9 @@
 				/* default flex value: flex: 1 0 auto; */
 				flex: 1 0 100px;
 				/*
-				flex-grow: 1;
-				flex-shrink: 0;
-				flex-basis: 100px;
+				flex-grow: 1; The proprotion that this element should grow
+				flex-shrink: 0; The proportion that this element should shrink
+				flex-basis: 100px; Starting size
 				*/
 				height: 100px;
 			}
@@ -137,6 +157,16 @@
 	</head>
 	<body>
 		<h1>Introduction to Flexbox</h1>
+		<section class="no-flex">
+			<h2>No Flexbox</h2>
+			<div class="container">
+				<div class="child">One</div>
+				<div class="child">Two</div>
+				<div class="child">Three</div>
+				<div class="child">Four</div>
+			</div>
+		</section>
+
 		<section class="plain-flex">
 			<h2>Plain flex</h2>
 			<div class="container">
@@ -186,6 +216,21 @@
 				<div class="child">Nine</div>
 				-->
 			</div>
+		</section>
+
+		<section class="flex-wrap">
+			<h2>Wrap elements
+				<div class="container">
+					<div class="child">One</div>
+					<div class="child">Two</div>
+					<div class="child">Three</div>
+					<div class="child">Four</div>
+					<div class="child">Five</div>
+					<div class="child">Six</div>
+					<div class="child">Seven</div>
+					<div class="child">Eight</div>
+				</div>
+			</h2>
 		</section>
 
 		<section class="flex-with-space">

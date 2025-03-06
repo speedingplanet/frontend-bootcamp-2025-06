@@ -149,6 +149,14 @@
 			#foo > li {
 				font-size: inherit;
 			}
+
+			div.font-inheritance {
+				font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			}
+
+			div.font-inheritance input[type] {
+				font-family: inherit;
+			}
 		</style>
 	</head>
 	<body>
@@ -210,6 +218,26 @@
 				<li>Third</li>
 				<li>Fourth</li>
 			</ul>
+		</div>
+		<div>
+			<h2>inherit as a value</h2>
+			<p>
+				Font values are not inherited into
+				<code>&lt;input&gt;</code>
+				elements. Demonstrated here.
+			</p>
+
+			<!-- Swap this line and the next line to see the difference -->
+			<!-- <div class="font-inheritance"> -->
+			<div>
+				<p>This is in the Impact font</p>
+				<input
+					type="text"
+					name="whatever"
+					id="whatever"
+					value="Test text"
+				/>
+			</div>
 		</div>
 	</body>
 </html>

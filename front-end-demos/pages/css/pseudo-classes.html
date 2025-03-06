@@ -65,6 +65,10 @@
 			#negation li:not(.clickable) {
 				background-color: orange;
 			}
+
+			#visited a:visited {
+				color: green
+			}
 		</style>
 	</head>
 	<body>
@@ -100,6 +104,7 @@
 				<li>Item 8</li>
 				<li>Item 9</li>
 				<li>Item 10</li>
+				<li>Item 11</li>
 			</ul>
 		</div>
 		<div id="hover">
@@ -113,6 +118,14 @@
 				<li class="clickable">.clickable</li>
 				<li>no class</li>
 				<li>no class</li>
+			</ul>
+		</div>
+
+		<div id="visited">
+			<h2>:visited</h2>
+			<ul>
+				<li><a href="https://google.com">Google</a></li>
+				<li><a href="https://bing.com">Bing</a></li>
 			</ul>
 		</div>
 
