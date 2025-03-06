@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,8 +45,31 @@
 			color: white;
 		}
 
+		/* Combine selectors */
+		section.widget {
+			border: 4px dashed red;
+		}
+
+		/* h2's that are children of headers, that are children
+		   of any element with the "widget" class applied */
+		.widget>header>h2 {
+			text-decoration: none;
+		}
+
+		/* Whitespace indicates an ancestor -> descendant relationship */
+		/* The asterisk "*" is the universal selector */
+		.widget * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		/* Combining selectors with a "," */
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: normal;
+		}
 	</style>
 </head>
+
 <body>
 	<main>
 		<header>
@@ -67,6 +91,15 @@
 				<li title="Berries!">🫐 Blueberries</li>
 			</ul>
 		</section>
+		<section class="widget">
+			<header>
+				<h2>Some widget</h2>
+			</header>
+			<div>
+				<p>Content would go here</p>
+			</div>
+		</section>
 	</main>
 </body>
+
 </html>
