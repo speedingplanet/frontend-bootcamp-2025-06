@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 
 function EventHandling() {
 	/*
-	let array = useState(0);
+	const array = useState(0);
 
 	// The value
-	let counter = array[0];
+	const counter = array[0];
 
 	// The setter/mutator for changing the value
-	let setCounter = array[1];
+	const setCounter = array[1];
+
+	const [value, setter] = useState(initialValue)
 	*/
-	let [counter, setCounter] = useState(10);
-	let [yesNoValue, setYesNoValue] = useState('');
-	let [message, setMessage] = useState('');
+	const [counter, setCounter] = useState(10);
+	const [yesNoValue, setYesNoValue] = useState('');
+	const [message, setMessage] = useState('');
 
 	function handleClick() {
 		setMessage('You clicked on the button!');
@@ -35,6 +37,10 @@ function EventHandling() {
 				</p>
 				<p>
 					In-line handler:
+					{/* <button
+						className="btn btn-secondary"
+						onClick={() => setMessage('You clicked on the in-line button')}
+					> */}
 					<button
 						className="btn btn-secondary"
 						onClick={() => setMessage('You clicked on the in-line button')}
