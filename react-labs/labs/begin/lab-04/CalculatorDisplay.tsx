@@ -6,7 +6,7 @@ export type MathOperator = '' | '+' | '-' | '*' | '/';
 interface CalculatorDisplayProps {
 	lValue: number;
 	rValue: number;
-	operator: MathOperator | '';
+	operator: MathOperator;
 }
 
 function CalculatorDisplay({ lValue, rValue, operator }: CalculatorDisplayProps) {

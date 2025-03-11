@@ -7,7 +7,7 @@ interface CalculatorDisplayProps {
 	lValue: number;
 	rValue: number;
 	// Union type: pick one of the following options
-	operator: MathOperator | '';
+	operator: MathOperator;
 }
 
 /*
