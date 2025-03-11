@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Calculator.css';
-import CalculatorDisplay from './CalculatorDisplay';
+import CalculatorDisplay, { MathOperator } from './CalculatorDisplay';
 
 /*
 Update the calculator so all the values are user-entered
@@ -14,55 +14,34 @@ You can run `npm run test` if you'd like, but there are two tests that are skipp
 We will write actual tests for it in the next lab
 */
 function Calculator() {
-	const [operator, setOperator] = useState('');
+	const [operator, setOperator] = useState<MathOperator>('');
 
-	/** @type {React.ChangeEventHandler<HTMLSelectElement>} */
-	function handleSwitch(event: React.ChangeEvent<HTMLSelectElement>) {
-		setOperator(event.currentTarget.value);
-	}
+	const handleSwitch: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
+		setOperator(event.currentTarget.value as MathOperator);
+	};
 
 	return (
-		<>
-			<form className="mb-1">
-				<div className="calculator">
-					<div className="label">
-						<label htmlFor="left-value">Left Value:</label>
-					</div>
-					<div>
-						{/* left operand field goes here */}
-						No left value
-					</div>
-					<div className="label">
-						<label htmlFor="right-value">Right Value:</label>
-					</div>
-					<div>
-						{/* right operand field goes here */}
-						No right value
-					</div>
-					<div className="label">
-						<label htmlFor="choose-operator">Choose an operator:</label>
-					</div>
-					<div>
-						<select
-							id="choose-operator"
-							onChange={handleSwitch}
-							value={operator}
-						>
-							<option value="">Choose</option>
-							<option value="+">+ Addition</option>
-							<option value="-">- Subtraction</option>
-							<option value="*">* Multiplication</option>
-							<option value="/">/ Division</option>
-						</select>
-					</div>
-				</div>
-			</form>
+		<div>
+			<div className="mb-1">
+				<label htmlFor="choose-operator">Choose an operator:</label>
+				<select
+					id="choose-operator"
+					onChange={handleSwitch}
+					value={operator}
+				>
+					<option value="">Choose</option>
+					<option value="+">+ Addition</option>
+					<option value="-">- Subtraction</option>
+					<option value="*">* Multiplication</option>
+					<option value="/">/ Division</option>
+				</select>
+			</div>
 			<CalculatorDisplay
-				lValue={2}
-				rValue={4}
+				lValue={5}
+				rValue={10}
 				operator={operator}
 			/>
-		</>
+		</div>
 	);
 }
 

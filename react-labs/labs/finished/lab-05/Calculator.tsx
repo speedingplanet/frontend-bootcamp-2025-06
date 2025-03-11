@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Calculator.css';
-import CalculatorDisplay from './CalculatorDisplay';
+import CalculatorDisplay, { MathOperator } from './CalculatorDisplay';
 
 /*
 Update the calculator so all the values are user-entered
@@ -14,24 +14,21 @@ You can run `npm run test` if you'd like, but there are two tests that are skipp
 We will write actual tests for it in the next lab
 */
 function Calculator() {
-	const [operator, setOperator] = useState('');
+	const [operator, setOperator] = useState<MathOperator>('');
 	const [lValue, setLValue] = useState(0);
 	const [rValue, setRValue] = useState(0);
 
-	/** @type {React.ChangeEventHandler<HTMLSelectElement>} */
-	function handleSwitch(event: React.ChangeEvent<HTMLSelectElement>) {
-		setOperator(event.currentTarget.value);
-	}
+	const handleSwitch: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
+		setOperator(event.currentTarget.value as MathOperator);
+	};
 
-	/** @type {React.ChangeEventHandler<HTMLInputElement>} */
-	function handleLValue(event: React.ChangeEvent<HTMLInputElement>) {
+	const handleLValue: React.ChangeEventHandler<HTMLInputElement> = (event) => {
 		setLValue(Number(event.currentTarget.value));
-	}
+	};
 
-	/** @type {React.ChangeEventHandler<HTMLInputElement>} */
-	function handleRValue(event: React.ChangeEvent<HTMLInputElement>) {
+	const handleRValue: React.ChangeEventHandler<HTMLInputElement> = (event) => {
 		setRValue(Number(event.currentTarget.value));
-	}
+	};
 
 	return (
 		<>
@@ -84,7 +81,7 @@ function Calculator() {
 			<CalculatorDisplay
 				lValue={lValue}
 				rValue={rValue}
-				operator={operator as MathOperators}
+				operator={operator as MathOperator}
 			/>
 		</>
 	);
