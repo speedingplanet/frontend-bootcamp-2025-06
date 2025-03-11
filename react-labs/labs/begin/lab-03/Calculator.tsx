@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import CalculatorDisplay from './CalculatorDisplay';
+import CalculatorDisplay, { MathOperator } from './CalculatorDisplay';
 
 function Calculator() {
-	const [operator, setOperator] = useState('');
+	const [operator, setOperator] = useState<MathOperator>('');
 
-	/** @type {React.ChangeEventHandler<HTMLSelectElement>} */
-	function handleSwitch(event) {
-		setOperator(event.currentTarget.value);
-	}
+	const handleSwitch: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
+		setOperator(event.currentTarget.value as MathOperator);
+	};
 
 	return (
 		<div>

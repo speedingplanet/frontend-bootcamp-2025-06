@@ -1,6 +1,14 @@
 import React from 'react';
 import './CalculatorDisplay.css';
 
+export type MathOperator = '' | '+' | '-' | '*' | '/';
+
+interface CalculatorDisplayProps {
+	lValue: number;
+	rValue: number;
+	operator: MathOperator;
+}
+
 /*
 Do not display the equation unless the operator is not an empty string
 
@@ -12,8 +20,8 @@ Notes about different possibilities:
 	- display?
 - You could create an additional class to manage visibility instead
 */
-function CalculatorDisplay({ lValue, rValue, operator }) {
-	let result = 0;
+function CalculatorDisplay({ lValue, rValue, operator }: CalculatorDisplayProps) {
+	let result: number | undefined;
 	switch (operator) {
 		case '+':
 			result = lValue + rValue;
@@ -27,8 +35,6 @@ function CalculatorDisplay({ lValue, rValue, operator }) {
 		case '/':
 			result = lValue / rValue;
 			break;
-		default:
-			result = 'unknown';
 	}
 
 	return (
@@ -37,7 +43,7 @@ function CalculatorDisplay({ lValue, rValue, operator }) {
 			<div className="operator">{operator}</div>
 			<div className="rValue">{rValue}</div>
 			<div>=</div>
-			<div className="result">{result}</div>
+			<div className="result">{result ?? 'Invalid equation'}</div>
 		</div>
 	);
 }
