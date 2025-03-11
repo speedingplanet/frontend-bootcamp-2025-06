@@ -33,6 +33,6 @@ describe('Testing Calculator', () => {
 		await userEvent.selectOptions(screen.getByLabelText(/Choose/), '+');
 
 		expect(screen.getByTestId('calculator-display')).toBeVisible();
-		expect(screen.getByTestId('calculator-result')).toHaveTextContent(testLValue + testRValue);
+		expect(screen.getByTestId('calculator-result')).toHaveTextContent(testLValue + testRValue + '');
 	});
 });

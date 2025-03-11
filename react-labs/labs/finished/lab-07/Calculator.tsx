@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Calculator.css';
-import CalculatorDisplay from './CalculatorDisplay';
+import CalculatorDisplay, { MathOperator } from './CalculatorDisplay';
 
 /*
 Change the use of state from three separate state values to one state object:
@@ -28,7 +28,13 @@ Try out your code in the browser as well. Functionality should stay the same,
 even if the underlying implementation is different.
 */
 
-const initialState = {
+interface CalculatorState {
+	operator: MathOperator;
+	lValue: number;
+	rValue: number;
+}
+
+const initialState: CalculatorState = {
 	operator: '',
 	lValue: 0,
 	rValue: 0,
@@ -37,15 +43,14 @@ const initialState = {
 function Calculator() {
 	const [state, setState] = useState(initialState);
 
-	/** @type {React.ChangeEventHandler<HTMLSelectElement>} */
-	function handleFormUpdate(event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+	const handleFormUpdate: React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement> = (event) => {
 		let field = event.currentTarget.name;
-		let value = event.currentTarget.value;
+		let value: string | number = event.currentTarget.value;
 		if (event.currentTarget.name !== 'operator') {
 			value = Number(value);
 		}
 		setState({ ...state, [field]: value });
-	}
+	};
 
 	return (
 		<>
@@ -97,7 +102,7 @@ function Calculator() {
 			<CalculatorDisplay
 				lValue={state.lValue}
 				rValue={state.rValue}
-				operator={state.operator as MathOperators}
+				operator={state.operator as MathOperator}
 			/>
 		</>
 	);
