@@ -1,26 +1,23 @@
 import React, { useState } from 'react';
 import './Calculator.css';
-import CalculatorDisplay from './CalculatorDisplay';
+import CalculatorDisplay, { MathOperator } from './CalculatorDisplay';
 
 function Calculator() {
-	const [operator, setOperator] = useState('');
+	const [operator, setOperator] = useState<MathOperator>('');
 	const [lValue, setLValue] = useState(0);
 	const [rValue, setRValue] = useState(0);
 
-	/** @type {React.ChangeEventHandler<HTMLSelectElement>} */
-	function handleSwitch(event: React.ChangeEvent<HTMLSelectElement>) {
-		setOperator(event.currentTarget.value);
-	}
+	const handleSwitch: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
+		setOperator(event.currentTarget.value as MathOperator);
+	};
 
-	/** @type {React.ChangeEventHandler<HTMLInputElement>} */
-	function handleLValue(event: React.ChangeEvent<HTMLInputElement>) {
+	const handleLValue: React.ChangeEventHandler<HTMLInputElement> = (event) => {
 		setLValue(Number(event.currentTarget.value));
-	}
+	};
 
-	/** @type {React.ChangeEventHandler<HTMLInputElement>} */
-	function handleRValue(event: React.ChangeEvent<HTMLInputElement>) {
+	const handleRValue: React.ChangeEventHandler<HTMLInputElement> = (event) => {
 		setRValue(Number(event.currentTarget.value));
-	}
+	};
 
 	return (
 		<>
@@ -30,6 +27,7 @@ function Calculator() {
 						<label htmlFor="left-value">Left Value:</label>
 					</div>
 					<div>
+						{/* left operand field goes here */}
 						<input
 							type="number"
 							name="lValue"
@@ -42,6 +40,7 @@ function Calculator() {
 						<label htmlFor="right-value">Right Value:</label>
 					</div>
 					<div>
+						{/* right operand field goes here */}
 						<input
 							type="number"
 							name="rValue"
@@ -71,7 +70,7 @@ function Calculator() {
 			<CalculatorDisplay
 				lValue={lValue}
 				rValue={rValue}
-				operator={operator as MathOperators}
+				operator={operator as MathOperator}
 			/>
 		</>
 	);

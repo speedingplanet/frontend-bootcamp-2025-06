@@ -48,14 +48,14 @@ describe('Testing Calculator', () => {
 	});
 
 	test('Displays equation after setting numeric values', async () => {
-		let testLValue = 5;
-		let testRValue = 7;
 		// Pass values as strings, because userEvent.type takes a string as a second argument
-		await userEvent.type(screen.getByLabelText(/Left/), testLValue + '');
-		await userEvent.type(screen.getByLabelText(/Right/), testRValue + '');
+		let testLValue = '5';
+		let testRValue = '7';
+		await userEvent.type(screen.getByLabelText(/Left/), testLValue);
+		await userEvent.type(screen.getByLabelText(/Right/), testRValue);
 		await userEvent.selectOptions(screen.getByLabelText(/Choose/), '+');
 
 		expect(screen.getByTestId('calculator-display')).toBeVisible();
-		expect(screen.getByTestId('calculator-result')).toHaveTextContent(testLValue + testRValue);
+		expect(screen.getByTestId('calculator-result')).toHaveTextContent(Number(testLValue) + Number(testRValue) + '');
 	});
 });
