@@ -1,10 +1,14 @@
 import CalculatorButton from './CalculatorButton';
 
-function BasicOperations() {
+interface BasicOperationsProps {
+	onButtonClick: (content: string) => void;
+}
+
+function BasicOperations({onButtonClick}: BasicOperationsProps) {
 	return (
 		<div>
 			<div>BasicOperations</div>
-			<CalculatorButton />
+			<CalculatorButton onButtonClick={onButtonClick}/>
 		</div>
 	);
 }
