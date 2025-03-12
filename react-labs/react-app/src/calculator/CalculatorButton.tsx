@@ -1,5 +1,5 @@
 function CalculatorButton() {
-	return <span>CalculatorButton</span>;
+	return <button className="btn btn-sm btn-primary calculator-button">5</button>;
 }
 
 export default CalculatorButton;

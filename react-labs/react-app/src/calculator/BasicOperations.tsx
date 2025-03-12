@@ -1,5 +1,12 @@
+import CalculatorButton from './CalculatorButton';
+
 function BasicOperations() {
-	return ( <span>BasicOperations</span> );
+	return (
+		<div>
+			<div>BasicOperations</div>
+			<CalculatorButton />
+		</div>
+	);
 }
 
 export default BasicOperations;

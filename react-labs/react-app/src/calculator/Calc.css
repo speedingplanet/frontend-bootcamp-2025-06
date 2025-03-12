@@ -1,0 +1,16 @@
+.calc {
+	border: 2px solid black;
+	height: 75vh;
+}
+
+.main-display {
+	border: 2px solid red;
+}
+
+.basic-operations {
+	border: 2px solid green;
+}
+
+.calculator-button {
+	border: 2px gray dashed;
+}

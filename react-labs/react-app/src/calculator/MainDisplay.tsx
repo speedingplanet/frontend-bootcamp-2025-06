@@ -1,5 +1,5 @@
 function MainDisplay() {
-	return <span>MainDisplay</span>;
+	return <span>Main display</span>;
 }
 
 export default MainDisplay;
