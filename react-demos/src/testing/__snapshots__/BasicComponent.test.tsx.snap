@@ -16,6 +16,11 @@ exports[`should compare snapshots 1`] = `
         value=""
       />
     </div>
+    <button
+      class="btn btn-primary"
+    >
+      Click me
+    </button>
     <ul>
       <li>
         Apples

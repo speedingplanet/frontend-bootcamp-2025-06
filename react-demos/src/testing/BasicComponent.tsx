@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import classes from './BasicComponent.module.css';
 
 function BasicComponent() {
+	// Part 1: Have a state variable
 	const [favorite, setFavorite] = useState('');
 
+	// Part 2: An event handler that updates state
 	function handleFavorite(event: React.ChangeEvent<HTMLInputElement>) {
 		setFavorite(event.currentTarget.value);
 	}
@@ -16,10 +18,15 @@ function BasicComponent() {
 					type="text"
 					name="favFruit"
 					id="favorite-fruit"
-					onChange={handleFavorite}
+					// Part 3: Form field calls the event handler whenever its value changes
+					onChange={(event) => {
+						setFavorite(event.currentTarget.value);
+					}}
+					// Part 4: The value displayed is the value from state
 					value={favorite}
 				/>
 			</div>
+			<button className="btn btn-primary">Click me</button>
 			<ul>
 				<li>Apples</li>
 				<li className={classes.bananas}>Bananas</li>

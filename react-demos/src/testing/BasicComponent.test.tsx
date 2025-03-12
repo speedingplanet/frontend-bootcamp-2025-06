@@ -5,11 +5,25 @@ import userEvent from '@testing-library/user-event';
 import BasicComponent from './BasicComponent';
 
 it('Smoke test (it)', () => {
-	expect(1 + 1).toBe(2);
+
+	/*
+	expect(actual).toBe(expected)
+	expect(code under test).toBe(what we think it will be)
+	We expect a value to match some condition
+	And throw an error if that's not true
+	*/
+	expect(1 + 1).toBe(2)
 });
 
 test('Smoke test (test)', () => {
 	expect(1 + 1).toBe(2);
+});
+
+test('Checking comment length', () => {
+	let testString = 'The quick brown fox jumped over the lazy dog';
+	let words = testString.split(' ');
+	expect(words.length).toBeLessThan(30);
+	expect(words.length).toBeGreaterThanOrEqual(2);
 });
 
 it('should render the BasicComponent component', () => {
@@ -70,6 +84,7 @@ it('should compare snapshots', () => {
 });
 
 it('should respond to content typed into a form field', async () => {
+	// Setup
 	const user = userEvent.setup();
 
 	const { container } = render(<BasicComponent />);
@@ -79,6 +94,7 @@ it('should respond to content typed into a form field', async () => {
 	let lastItem = container.querySelector('li:last-child');
 	expect(lastItem).toHaveTextContent('');
 
+	// Interaction
 	let fruit = 'Lemons';
 	await user.type(formField, fruit);
 	expect(formField).toHaveValue(fruit);
