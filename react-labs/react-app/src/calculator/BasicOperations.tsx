@@ -4,11 +4,19 @@ interface BasicOperationsProps {
 	onButtonClick: (content: string) => void;
 }
 
-function BasicOperations({onButtonClick}: BasicOperationsProps) {
+let buttons = ['AC', '+/-', '%', '÷', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+function BasicOperations({ onButtonClick }: BasicOperationsProps) {
 	return (
 		<div>
 			<div>BasicOperations</div>
-			<CalculatorButton onButtonClick={onButtonClick}/>
+			{buttons.map((value, index) => (
+				<CalculatorButton
+					key={index}
+					buttonValue={value}
+					onButtonClick={onButtonClick}
+				/>
+			))}
 		</div>
 	);
 }
