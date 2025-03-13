@@ -2,7 +2,7 @@ import { ButtonDescriptor } from './calculator-types';
 import CalculatorButton from './CalculatorButton';
 
 interface BasicOperationsProps {
-	onButtonClick: (content: string) => void;
+	onButtonClick: (content: ButtonDescriptor) => void;
 }
 
 let buttons: Array<ButtonDescriptor> = [
@@ -22,17 +22,23 @@ let buttons: Array<ButtonDescriptor> = [
 	{ label: '2' },
 	{ label: '3' },
 	{ label: '+', className: 'basic-operator' },
-	{ label: '⌨' },
+	{ label: '⌨', hidden: false },
+	{ label: 'Rand', hidden: true },
 	{ label: '0' },
 	{ label: '.' },
 	{ label: '=', className: 'basic-operator' },
 ];
 
 function BasicOperations({ onButtonClick }: BasicOperationsProps) {
+	// let randButton = buttons.find(b => b.label === 'Rand');
+
 	return (
 		<>
 			{buttons.map((button) => (
-				<div key={button.label}>
+				<div
+					key={button.label}
+					hidden={button.hidden}
+				>
 					<CalculatorButton
 						{...button}
 						onButtonClick={onButtonClick}

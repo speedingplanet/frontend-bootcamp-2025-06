@@ -2,7 +2,7 @@ import { ButtonDescriptor } from './calculator-types';
 import CalculatorButton from './CalculatorButton';
 
 interface ScientificOperationsProps {
-	onButtonClick: (content: string) => void;
+	onButtonClick: (content: ButtonDescriptor) => void;
 }
 
 let buttons: Array<ButtonDescriptor> = [

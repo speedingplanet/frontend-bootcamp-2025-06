@@ -4,6 +4,7 @@ import './Calc.css';
 import EquationDisplay from './EquationDisplay';
 import ScientificOperations from './ScientificOperations';
 import { useState } from 'react';
+import { ButtonDescriptor } from './calculator-types';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 let operators = ['÷', '✕', '-', '+', '='];
@@ -14,8 +15,8 @@ let specialCases = ['AC', '+/-', '%'];
 function Calculator() {
 	const [showScience, setShowScience] = useState(true);
 
-	const handleButtonClick = (value: string) => {
-		console.log(value);
+	const handleButtonClick = (button: ButtonDescriptor) => {
+		console.log(button.value ?? button.label);
 
 		/*
 		if value is 'AC', clean both display and equation history
