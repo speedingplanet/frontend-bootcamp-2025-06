@@ -7,7 +7,7 @@ function CalculatorButton({ label, onButtonClick }: CalculatorButtonProps) {
 	return (
 		<button
 			onClick={(event) => onButtonClick(event.currentTarget.textContent ?? '')}
-			className="btn btn-sm btn-primary calculator-button"
+			className="calculator-button"
 		>
 			{label}
 		</button>

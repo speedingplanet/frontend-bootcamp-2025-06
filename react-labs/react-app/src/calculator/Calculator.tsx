@@ -2,6 +2,7 @@ import BasicOperations from './BasicOperations';
 import MainDisplay from './MainDisplay';
 import './Calc.css';
 import { useState } from 'react';
+import EquationDisplay from './EquationDisplay';
 
 function Calculator() {
 	const [buttonValue, setButtonValue] = useState('');
@@ -11,21 +12,18 @@ function Calculator() {
 	};
 
 	return (
-		<section className="container calc">
-			<header className="row mb-2 mt-2 text-center">
-				<div className="col">
-					<span>Calculator</span>
-				</div>
+		<section className="calc">
+			<header>
+				<span>Calculator</span>
 			</header>
-			<div className="row main-display mb-2">
-				<div className="col">
-					<MainDisplay content={buttonValue} />
-				</div>
+			<div className="equation-display">
+				<EquationDisplay />
 			</div>
-			<div className="row basic-operations">
-				<div className="col">
-					<BasicOperations onButtonClick={handleButtonClick}/>
-				</div>
+			<div className="main-display">
+				<MainDisplay content={buttonValue} />
+			</div>
+			<div className="basic-operations">
+				<BasicOperations onButtonClick={handleButtonClick} />
 			</div>
 		</section>
 	);
