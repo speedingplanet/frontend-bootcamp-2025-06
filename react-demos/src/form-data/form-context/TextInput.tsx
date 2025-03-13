@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { nanoid } from 'nanoid';
+import { FormContext, FormState } from './FormWithContext';
 
 /**
  *
@@ -20,7 +21,10 @@ interface TextInputProps extends React.ComponentPropsWithoutRef<'input'> {
 }
 
 // function TextInput({ id, name, value, updateForm, children, ...props }) {
-function TextInput({ id, name, value, updateForm, children, ...props }: TextInputProps) {
+function TextInput({ id, name, updateForm, children, ...props }: TextInputProps) {
+
+	let context = useContext(FormContext);
+
 	let labelText = children || 'Label goes here';
 	if (!id) {
 		id = nanoid();
@@ -36,7 +40,7 @@ function TextInput({ id, name, value, updateForm, children, ...props }: TextInpu
 					type="text"
 					id={id}
 					name={name}
-					value={value}
+					value={context ? context[name as keyof FormState] : undefined}
 					onChange={updateForm}
 					{...props}
 				/>

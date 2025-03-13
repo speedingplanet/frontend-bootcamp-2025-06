@@ -2,13 +2,22 @@ import React, { useState, createContext } from 'react';
 import FormDataDisplay from '../FormDataDisplay';
 import TextInput from './TextInput';
 
+/*
 interface FormState {
 	[field: string]: string;
 }
+*/
 
-const FormContext = createContext<FormState | null>(null);
+export type FormState = typeof initialState;
 
-const initialState = {};
+export const FormContext = createContext<FormState | null>(null);
+
+const initialState = {
+	firstName: '',
+	lastName: '',
+	city: '',
+	state: '',
+};
 
 function FormWithContext() {
 	const [formState, setFormState] = useState<FormState>(initialState);
@@ -18,13 +27,13 @@ function FormWithContext() {
 		let value = event.currentTarget.value;
 
 		let nextState = { ...formState };
-		nextState[field] = value;
+		nextState[field as keyof FormState] = value;
 
 		setFormState(nextState);
 	}
 
 	return (
-		<FormContext.Provider value={{}}>
+		<FormContext.Provider value={formState}>
 			<h3>Form with context</h3>
 			<div className="row">
 				<div className="col">
@@ -33,7 +42,6 @@ function FormWithContext() {
 						<TextInput
 							name="firstName"
 							updateForm={handleFormUpdate}
-							value="test"
 						>
 							First Name:
 						</TextInput>
@@ -41,7 +49,6 @@ function FormWithContext() {
 						<TextInput
 							name="lastName"
 							updateForm={handleFormUpdate}
-							value="test"
 						>
 							Last Name:
 						</TextInput>
@@ -49,7 +56,6 @@ function FormWithContext() {
 						<TextInput
 							name="city"
 							updateForm={handleFormUpdate}
-							value="test"
 						>
 							City:
 						</TextInput>
@@ -57,7 +63,6 @@ function FormWithContext() {
 						<TextInput
 							name="state"
 							updateForm={handleFormUpdate}
-							value="test"
 						>
 							State:
 						</TextInput>
