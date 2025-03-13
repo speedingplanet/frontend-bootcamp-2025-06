@@ -22,8 +22,8 @@ let buttons: Array<ButtonDescriptor> = [
 	{ label: '2' },
 	{ label: '3' },
 	{ label: '+', className: 'basic-operator' },
-	{ label: '0' },
 	{ label: '⌨' },
+	{ label: '0' },
 	{ label: '.' },
 	{ label: '=', className: 'basic-operator' },
 ];
