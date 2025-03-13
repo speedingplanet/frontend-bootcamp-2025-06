@@ -1,15 +1,15 @@
 interface CalculatorButtonProps {
-	buttonValue: string;
+	label: string;
 	onButtonClick: (content: string) => void;
 }
 
-function CalculatorButton({ buttonValue, onButtonClick }: CalculatorButtonProps) {
+function CalculatorButton({ label, onButtonClick }: CalculatorButtonProps) {
 	return (
 		<button
 			onClick={(event) => onButtonClick(event.currentTarget.textContent ?? '')}
 			className="btn btn-sm btn-primary calculator-button"
 		>
-			{buttonValue}
+			{label}
 		</button>
 	);
 }
