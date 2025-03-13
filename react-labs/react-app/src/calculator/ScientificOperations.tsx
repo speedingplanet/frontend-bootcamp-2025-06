@@ -6,36 +6,36 @@ interface ScientificOperationsProps {
 }
 
 let buttons: Array<ButtonDescriptor> = [
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
-	{label: 'A'},
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
+	{ label: 'A' },
 ];
 
 function ScientificOperations({ onButtonClick }: ScientificOperationsProps) {
@@ -45,6 +45,7 @@ function ScientificOperations({ onButtonClick }: ScientificOperationsProps) {
 				<div key={button.label}>
 					<CalculatorButton
 						{...button}
+						onButtonClick={onButtonClick}
 					/>
 				</div>
 			))}
