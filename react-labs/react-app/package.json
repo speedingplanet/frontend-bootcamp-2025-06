@@ -20,6 +20,7 @@
 		"tsc": "tsc -p tsconfig.json"
 	},
 	"dependencies": {
+		"classnames": "^2.5.1",
 		"react-toastify": "^11.0.5"
 	},
 	"description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
@@ -27,6 +28,5 @@
 	"directories": {
 		"test": "tests"
 	},
-	"devDependencies": {},
 	"license": "ISC"
 }

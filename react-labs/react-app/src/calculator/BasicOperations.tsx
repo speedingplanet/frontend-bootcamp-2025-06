@@ -1,40 +1,35 @@
+import { ButtonDescriptor } from './calculator-types';
 import CalculatorButton from './CalculatorButton';
 
 interface BasicOperationsProps {
 	onButtonClick: (content: string) => void;
 }
 
-export interface ButtonDescriptor {
-	label: string;
-	value?: string;
-	className?: string;
-}
-
 let buttons: Array<ButtonDescriptor> = [
-	{ label: 'AC' },
-	{ label: '+/-' },
-	{ label: '%' },
-	{ label: '÷' },
+	{ label: 'AC', className: 'basic-header' },
+	{ label: '+/-', className: 'basic-header' },
+	{ label: '%', className: 'basic-header' },
+	{ label: '÷', className: 'basic-operator' },
 	{ label: '7' },
 	{ label: '8' },
 	{ label: '9' },
-	{ label: '✕' },
+	{ label: '✕', className: 'basic-operator' },
 	{ label: '4' },
 	{ label: '5' },
 	{ label: '6' },
-	{ label: '-' },
+	{ label: '-', className: 'basic-operator' },
 	{ label: '1' },
 	{ label: '2' },
 	{ label: '3' },
-	{ label: '+' },
+	{ label: '+', className: 'basic-operator' },
 	{ label: '0' },
 	{ label: '⌨' },
 	{ label: '.' },
-	{ label: '=' },
+	{ label: '=', className: 'basic-operator' },
 ];
 
 function BasicOperations({ onButtonClick }: BasicOperationsProps) {
-	console.log(buttons.toReversed())
+	console.log(buttons.toReversed());
 	return (
 		<>
 			{buttons.map((button) => (

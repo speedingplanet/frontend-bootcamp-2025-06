@@ -2,7 +2,7 @@
 	border: 2px solid black;
 	height: 75vh;
 	display: grid;
-	grid-template-rows: 2em 2em 4em 1fr;
+	grid-template-rows: 1.5em 2em 4em 1fr;
 }
 
 .calc header {
@@ -10,19 +10,24 @@
 }
 
 .equation-display, .main-display {
-	text-align: end;
+	padding-inline-end: 0.3em;
+	display: flex;
+	align-items: center;
+	justify-content: end;
 }
 
 .equation-display {
-	border: 2px solid blue;
+	/* border: 2px solid blue; */
 }
 
 .main-display {
-	border: 2px solid red;
+	/* border: 2px solid red; */
+	font-size: 150%;
 }
 
+
 .basic-operations {
-	border: 2px solid green;
+	/* border: 2px solid green; */
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(5, 1fr);
@@ -32,4 +37,14 @@
 	width: 100%;
 	height: 100%;
 	border-radius: 10%;
+	background-color: #444;
+	color: #FFFFFF
+}
+
+.basic-operator {
+	background-color: rgb(252, 180, 47);
+}
+
+.basic-header {
+	background-color: #999;
 }

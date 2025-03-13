@@ -1,13 +1,15 @@
-interface CalculatorButtonProps {
-	label: string;
+import { ButtonDescriptor } from './calculator-types';
+import classNames from 'classnames';
+
+interface CalculatorButtonProps extends ButtonDescriptor {
 	onButtonClick: (content: string) => void;
 }
 
-function CalculatorButton({ label, onButtonClick }: CalculatorButtonProps) {
+function CalculatorButton({ label, value, className, onButtonClick }: CalculatorButtonProps) {
 	return (
 		<button
 			onClick={(event) => onButtonClick(event.currentTarget.textContent ?? '')}
-			className="calculator-button"
+			className={classNames('calculator-button', className)}
 		>
 			{label}
 		</button>
