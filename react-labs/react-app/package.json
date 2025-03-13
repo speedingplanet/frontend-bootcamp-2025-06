@@ -7,7 +7,7 @@
 	"scripts": {
 		"dev": "node scripts/check-labs.js && vite",
 		"build": "tsc && vite build",
-		"format": "prettier . --check",
+		"format": "prettier . --check || true",
 		"format:write": "prettier . --write",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",

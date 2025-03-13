@@ -29,13 +29,11 @@ let buttons: Array<ButtonDescriptor> = [
 ];
 
 function BasicOperations({ onButtonClick }: BasicOperationsProps) {
-	console.log(buttons.toReversed());
 	return (
 		<>
 			{buttons.map((button) => (
-				<div>
+				<div key={button.label}>
 					<CalculatorButton
-						key={button.label}
 						{...button}
 						onButtonClick={onButtonClick}
 					/>

@@ -10,6 +10,7 @@ function CalculatorButton({ label, value, className, onButtonClick }: Calculator
 		<button
 			onClick={(event) => onButtonClick(event.currentTarget.textContent ?? '')}
 			className={classNames('calculator-button', className)}
+			value={value}
 		>
 			{label}
 		</button>
