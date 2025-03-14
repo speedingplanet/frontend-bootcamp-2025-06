@@ -2,16 +2,6 @@ import React, { useState, createContext } from 'react';
 import FormDataDisplay from '../FormDataDisplay';
 import TextInput from './TextInput';
 
-/*
-interface FormState {
-	[field: string]: string;
-}
-*/
-
-export type FormState = typeof initialState;
-
-export const FormContext = createContext<FormState | null>(null);
-
 const initialState = {
 	firstName: '',
 	lastName: '',
@@ -19,9 +9,19 @@ const initialState = {
 	state: '',
 };
 
+export type FormState = typeof initialState;
+
+interface FormContextProps {
+	state: FormState;
+	updater: (field: string, value: string) => void;
+}
+
+export const FormContext = createContext<FormContextProps | null>(null);
+
 function FormWithContext() {
 	const [formState, setFormState] = useState<FormState>(initialState);
 
+	/*
 	function handleFormUpdate(event: React.ChangeEvent<HTMLInputElement>) {
 		let field = event.currentTarget.name;
 		let value = event.currentTarget.value;
@@ -31,9 +31,22 @@ function FormWithContext() {
 
 		setFormState(nextState);
 	}
+	*/
+
+	function updateState(field: string, value: string) {
+		let nextState = { ...formState };
+		nextState[field as keyof FormState] = value;
+
+		setFormState(nextState);
+	}
+
+	let contextValue: FormContextProps = {
+		state: formState,
+		updater: updateState
+	}
 
 	return (
-		<FormContext.Provider value={formState}>
+		<FormContext.Provider value={contextValue}>
 			<h3>Form with context</h3>
 			<div className="row">
 				<div className="col">
@@ -41,28 +54,24 @@ function FormWithContext() {
 						{/* First Name */}
 						<TextInput
 							name="firstName"
-							updateForm={handleFormUpdate}
 						>
 							First Name:
 						</TextInput>
 						{/* Last Name */}
 						<TextInput
 							name="lastName"
-							updateForm={handleFormUpdate}
 						>
 							Last Name:
 						</TextInput>
 						{/* City */}
 						<TextInput
 							name="city"
-							updateForm={handleFormUpdate}
 						>
 							City:
 						</TextInput>
 						{/* State */}
 						<TextInput
 							name="state"
-							updateForm={handleFormUpdate}
 						>
 							State:
 						</TextInput>

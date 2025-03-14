@@ -17,7 +17,7 @@ import { FormContext, FormState } from './FormWithContext';
  * @see {@link https://react-typescript-cheatsheet.netlify.app/docs/advanced/patterns_by_usecase#wrappingmirroring-a-html-element}
  */
 interface TextInputProps extends React.ComponentPropsWithoutRef<'input'> {
-	updateForm: React.ChangeEventHandler<HTMLInputElement>;
+	updateForm?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 // function TextInput({ id, name, value, updateForm, children, ...props }) {
@@ -40,8 +40,10 @@ function TextInput({ id, name, updateForm, children, ...props }: TextInputProps)
 					type="text"
 					id={id}
 					name={name}
-					value={context ? context[name as keyof FormState] : undefined}
-					onChange={updateForm}
+					value={context?.state ? context.state[name as keyof FormState] : undefined}
+					onChange={(event) => {
+						context?.updater(event.currentTarget.name, event.currentTarget.value);
+					}}
 					{...props}
 				/>
 			</div>
