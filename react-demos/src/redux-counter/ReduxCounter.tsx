@@ -73,10 +73,12 @@ function Counter({ value, increment, decrement }: CounterProps) {
 	);
 }
 
+// Map Redux state (counter) to React component props (value)
 const mapStateToProps = (state: CounterState) => ({
 	value: state.counter,
 });
 
+// Map React event handlers to Redux action dispatches
 const mapDispatchToProps = (dispatch: Dispatch) => ({
 	increment: () => dispatch(addOne()),
 	decrement: () => dispatch(subtractOne()),
