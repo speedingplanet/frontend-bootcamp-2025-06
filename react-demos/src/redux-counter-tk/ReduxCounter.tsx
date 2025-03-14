@@ -1,11 +1,25 @@
 import React from 'react';
 import Counter from './Counter';
 import { useDispatch, useSelector } from 'react-redux';
-import { increment, decrement, CounterState } from './counter-slice';
+import {
+	increment,
+	decrement,
+	useAppDispatch,
+	useAppSelector,
+} from './counter-slice';
 
 const BetterReduxCounter = () => {
-	const dispatch = useDispatch();
-	const count = useSelector((state: CounterState) => state.counter);
+	// Dispatch actions to the store, typed
+	const dispatch = useAppDispatch();
+
+	// Dispatch actions to the store, untyped
+	// const untypedDispatch = useDispatch();
+
+	// Receive updates from the store, manually typed
+	// const untypedCount = useSelector((state: CounterState) => state.counter);
+
+	// Receive updates from the store, typed
+	const count = useAppSelector((state) => state.counter);
 
 	const dispatchIncrement = () => {
 		dispatch(increment());

@@ -1,4 +1,5 @@
 import { createSlice, configureStore, combineReducers } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 const counterSlice = createSlice({
 	name: 'counter',
@@ -33,3 +34,5 @@ export const store = configureStore({
 
 export type CounterState = ReturnType<typeof store.getState>;
 export type CounterDispatch = typeof store.dispatch;
+export const useAppDispatch = useDispatch.withTypes<CounterDispatch>();
+export const useAppSelector: TypedUseSelectorHook<CounterState> = useSelector;
