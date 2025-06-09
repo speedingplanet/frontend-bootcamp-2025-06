@@ -1,7 +1,7 @@
 {
 	"name": "front-end-demos",
 	"private": true,
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"type": "module",
 	"author": "John Paxton <pax@speedingplanet.com>",
 	"scripts": {
@@ -14,7 +14,9 @@
 		"lint:fix": "eslint . --fix"
 	},
 	"main": "index.js",
-	"devDependencies": {},
 	"license": "ISC",
-	"description": ""
+	"description": "",
+	"dependencies": {
+		"bootstrap": "^5.3.6"
+	}
 }
