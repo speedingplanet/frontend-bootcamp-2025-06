@@ -1,5 +1,6 @@
 import React from 'react';
 import Counter from './Counter';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useDispatch, useSelector } from 'react-redux';
 import { increment, decrement, useAppDispatch, useAppSelector } from './counter-slice';
 

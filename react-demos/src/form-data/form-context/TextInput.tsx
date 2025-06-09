@@ -1,3 +1,4 @@
+/*eslint @typescript-eslint/no-unused-vars: ["error", { "args": "after-used" }]*/
 import React, { useContext } from 'react';
 import { nanoid } from 'nanoid';
 import { FormContext, FormState } from './FormWithContext';
@@ -21,7 +22,7 @@ interface TextInputProps extends React.ComponentPropsWithoutRef<'input'> {
 }
 
 // function TextInput({ id, name, value, updateForm, children, ...props }) {
-function TextInput({ id, name, updateForm, children, ...props }: TextInputProps) {
+function TextInput({ id, name, children, ...props }: TextInputProps) {
 	let context = useContext(FormContext);
 
 	let labelText = children || 'Label goes here';

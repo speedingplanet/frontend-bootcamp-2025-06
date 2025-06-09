@@ -6,6 +6,7 @@ function BasicComponent() {
 	const [favorite, setFavorite] = useState('');
 
 	// Part 2: An event handler that updates state
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	function handleFavorite(event: React.ChangeEvent<HTMLInputElement>) {
 		setFavorite(event.currentTarget.value);
 	}

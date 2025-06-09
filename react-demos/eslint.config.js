@@ -7,6 +7,11 @@ export default tseslint.config(
 	js.configs.recommended,
 	...tseslint.configs.recommended,
 	{
+		name: 'react',
+		files: ['**/*.jsx'],
+		...reactPlugin.configs.flat.recommended,
+	},
+	{
 		name: '@speedingplanet/eslint-config',
 		languageOptions: {
 			parserOptions: {
@@ -19,7 +24,7 @@ export default tseslint.config(
 		},
 		rules: {
 			'no-unused-private-class-members': 'warn',
-			'no-unused-vars': ['warn'],
+			'no-unused-vars': ['warn', { args: 'after-used' }],
 			'prefer-const': 'off',
 		},
 	},
@@ -28,12 +33,7 @@ export default tseslint.config(
 		files: ['**/*.ts', '**/*.tsx'],
 		rules: {
 			'no-unused-vars': 'off',
-			'@typescript-eslint/no-unused-vars': 'warn',
+			'@typescript-eslint/no-unused-vars': ['warn', { args: 'after-used' }],
 		},
 	},
-	{
-		name: 'react',
-		files: ['**/*.jsx'],
-		...reactPlugin.configs.flat.recommended,
-	}
 );
