@@ -42,8 +42,8 @@ function FormWithContext() {
 
 	let contextValue: FormContextProps = {
 		state: formState,
-		updater: updateState
-	}
+		updater: updateState,
+	};
 
 	return (
 		<FormContext.Provider value={contextValue}>
@@ -52,29 +52,13 @@ function FormWithContext() {
 				<div className="col">
 					<form>
 						{/* First Name */}
-						<TextInput
-							name="firstName"
-						>
-							First Name:
-						</TextInput>
+						<TextInput name="firstName">First Name:</TextInput>
 						{/* Last Name */}
-						<TextInput
-							name="lastName"
-						>
-							Last Name:
-						</TextInput>
+						<TextInput name="lastName">Last Name:</TextInput>
 						{/* City */}
-						<TextInput
-							name="city"
-						>
-							City:
-						</TextInput>
+						<TextInput name="city">City:</TextInput>
 						{/* State */}
-						<TextInput
-							name="state"
-						>
-							State:
-						</TextInput>
+						<TextInput name="state">State:</TextInput>
 					</form>
 				</div>
 				<div className="col">

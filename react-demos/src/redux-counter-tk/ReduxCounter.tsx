@@ -1,12 +1,7 @@
 import React from 'react';
 import Counter from './Counter';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	increment,
-	decrement,
-	useAppDispatch,
-	useAppSelector,
-} from './counter-slice';
+import { increment, decrement, useAppDispatch, useAppSelector } from './counter-slice';
 
 const BetterReduxCounter = () => {
 	// Dispatch actions to the store, typed

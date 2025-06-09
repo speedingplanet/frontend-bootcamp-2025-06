@@ -22,7 +22,6 @@ interface TextInputProps extends React.ComponentPropsWithoutRef<'input'> {
 
 // function TextInput({ id, name, value, updateForm, children, ...props }) {
 function TextInput({ id, name, updateForm, children, ...props }: TextInputProps) {
-
 	let context = useContext(FormContext);
 
 	let labelText = children || 'Label goes here';

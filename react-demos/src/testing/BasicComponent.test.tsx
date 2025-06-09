@@ -5,14 +5,13 @@ import userEvent from '@testing-library/user-event';
 import BasicComponent from './BasicComponent';
 
 it('Smoke test (it)', () => {
-
 	/*
 	expect(actual).toBe(expected)
 	expect(code under test).toBe(what we think it will be)
 	We expect a value to match some condition
 	And throw an error if that's not true
 	*/
-	expect(1 + 1).toBe(2)
+	expect(1 + 1).toBe(2);
 });
 
 test('Smoke test (test)', () => {

@@ -3,6 +3,7 @@ backups
 .vscode
 package.json
 package-lock.json
-*.css
+*.code-workspace
+bootstrap*
 countries-table.json
 tsconfig.*json

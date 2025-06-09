@@ -4,7 +4,7 @@ backups
 package.json
 package-lock.json
 *.code-workspace
-bootstrap.css
+bootstrap*
 pages/html-experiments.html
 pages/void-vs-self-closing.html
 pages/whitespace.html
