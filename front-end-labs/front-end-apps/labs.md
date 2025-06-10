@@ -6,7 +6,9 @@
 
 Starting command: `npm run dev`
 
-We have a home page that points to "To-dos", which we will build together, "ZipPay" which you will build, and "ZipPay Finished" which you can use to see completed versions of the ZipPay app.
+We have a home page that points to "To-dos", which we can build together, "ZipPay" which you will build, and "ZipPay Finished" which you can use to see completed versions of the ZipPay app.
+
+Start by running `npm run begin 1` which will set up lab #1. 
 
 Working in `zippay/index.html`:
 
@@ -177,7 +179,7 @@ Let's make the form a little bit better. We will add some validations to the for
 
 ## CSS Exercises
 
-### Lab 8: Navbar: CSS Setup
+### Lab 7: Navbar: CSS Setup
 
 Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve it as follows:
 
@@ -195,7 +197,7 @@ Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve 
 
 1. Take a look at your page and see if you have the changes you want
 
-### Lab 9: Navbar: Display
+### Lab 8: Navbar: Display
 
 We're going to change the way the navbar elements are displayed. Keep working in `navbar.html` and `navbar.css`.
 
@@ -205,14 +207,14 @@ We're going to change the way the navbar elements are displayed. Keep working in
 1. Try getting the list items to equally take up space in the width of the screen
 1. Center the text in each element in the navbar
 
-### Lab 10: Navbar: Pseudo-classes
+### Lab 9: Navbar: Pseudo-classes
 
 We will use psuedo-classes to respond to user interactions
 
 1. Turn off the behavior where a visited link has a different color from an unvisited link
 1. When hovering over one of the navbar elements, swap the background and text colors (for example, if it was originally black text on a white background, make it white text on a black background)
 
-### Lab 11: Navbar: Flexbox
+### Lab 10: Navbar: Flexbox
 
 There are limitations to using `inline-block`. Let's swap it out for flexbox
 
@@ -221,7 +223,7 @@ There are limitations to using `inline-block`. Let's swap it out for flexbox
 1. Modify the container to have _space around_ the various elements
 1. Put a small _gap_ between the various elements
 
-## Lab 12: Putting it all together. Part 1: Form HTML
+## Lab 11: Putting it all together. Part 1: Form HTML
 
 Now that we know grids forms pretty well, let's add a form all at once. Account settings should have the following:
 
