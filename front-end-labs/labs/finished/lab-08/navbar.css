@@ -1,0 +1,25 @@
+body {
+	padding: 0 3px;
+}
+
+body > header {
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.navbar-list li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 0 0.2em;
+	width: 19%;
+	text-align: center;
+}
+
+.navbar-list a {
+	text-decoration: none;
+	color: #3a6bbf
+}
+
+.navbar-list ul {
+	padding: 0;
+}

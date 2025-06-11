@@ -202,8 +202,14 @@ We're going to change the way the navbar elements are displayed. Keep working in
 1. Remove any padding from the unordered list
 1. Target the appropriate element in the unordered list so that it displays in-line
 1. Update the padding for list items to something appropriate so there's a little horizontal space on either side
-1. Try getting the list items to equally take up space in the width of the screen
+1. Try getting the list items to equally take up space in the width of the screen. That is, to be evenly distributed across the width of the screen.
 1. Center the text in each element in the navbar
+
+While we're here, let's clean up some more of the index.html:
+
+1. Remove the "Links: " text, as well as the break tag
+1. Add some space below the first `header` element in the page. Alternatively, add it above the navbar, depending on your perspective
+1. Center the text in that same header
 
 ### Lab 9: Navbar: Pseudo-classes
 
