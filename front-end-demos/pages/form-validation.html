@@ -4,10 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta
 			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
+			content="width=device-width, initial-scale=1.0" />
 		<title>Form Validation</title>
 	</head>
+
 	<body>
 		<form>
 			<div>
@@ -16,14 +16,13 @@
 					type="text"
 					name="text-example"
 					id="text-example"
+					required
 					minlength="5"
 					maxlength="20"
-					required
-					pattern="\p{Uppercase_Letter}\p{Lowercase_Letter}+"
-				/>
+					pattern="\p{Uppercase_Letter}\p{Lowercase_Letter}+" />
 				<!-- pattern takes advantage of Unicode character classes
-				 Older version
-					pattern="[A-Z][a-z]+"
+				Older version
+				pattern="[A-Z][a-z]+"
 
 				Short, unicode-aware
 				pattern="\p{Lu}\p{L}+"
@@ -51,8 +50,7 @@
 					required
 					min="10"
 					max="10000"
-					step="2"
-				/>
+					step="2" />
 				<p>Any number between 10 and 10000 as long as it's even/divisible by 2</p>
 			</div>
 			<button type="submit">Send</button>

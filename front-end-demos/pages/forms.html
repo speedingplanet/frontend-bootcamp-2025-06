@@ -4,24 +4,28 @@
 		<meta charset="UTF-8" />
 		<meta
 			http-equiv="X-UA-Compatible"
-			content="IE=edge"
-		/>
+			content="IE=edge" />
 		<meta
 			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
+			content="width=device-width, initial-scale=1.0" />
 		<title>Forms</title>
 		<style>
 			.input-container {
 				display: flex;
-				max-width: 25vw;
+				max-width: 30vw;
+				margin: 1em 0;
 			}
 
 			.input-container > div {
 				flex: 1;
 			}
+
+			.input-container input {
+				width: 100%;
+			}
 		</style>
 	</head>
+
 	<body>
 		<h1>HTML Forms</h1>
 
@@ -33,24 +37,25 @@
 		<form>
 			<!-- <label for="first-name">Enter your first name:</label> -->
 			<!-- 
-				Just a label and a text field. 
-				The label is associated with the text field by wrapping the text field
-			 -->
-			<label>
-				Enter your first name:
-				<input
-					type="text"
-					name="firstName"
-					id="first-name"
-					placeholder="Enter your name here"
-				/>
-			</label>
+		Just a label and a text field. 
+		The label is associated with the text field by wrapping the text field
+	  -->
+			<div class="input-container">
+				<label>
+					Enter your first name:
+					<input
+						type="text"
+						name="firstName"
+						id="first-name"
+						placeholder="Enter your name here" />
+				</label>
+			</div>
 
 			<!-- 
-				Label and a text field in a set of divs. Since the label cannot wrap the text field
-				we use the "for" attribute to associate the label with the text field.
-			 -->
-			<div>
+		Label and a text field in a set of divs. Since the label cannot wrap the text field
+		we use the "for" attribute to associate the label with the text field.
+		-->
+			<div class="input-container">
 				<div>
 					<label for="last-name">Enter your last name:</label>
 				</div>
@@ -59,8 +64,7 @@
 						type="text"
 						name="lastName"
 						id="last-name"
-						maxlength="100"
-					/>
+						maxlength="100" />
 				</div>
 			</div>
 
@@ -72,8 +76,7 @@
 					<input
 						type="text"
 						name="text-input-name"
-						id="text-input-id"
-					/>
+						id="text-input-id" />
 				</div>
 			</div>
 			<div class="input-container">
@@ -86,8 +89,7 @@
 						step="5"
 						min="5"
 						max="100"
-						value="0"
-					/>
+						value="0" />
 				</div>
 			</div>
 			<div class="input-container">
@@ -99,8 +101,7 @@
 						id="decimal-input-id"
 						step="0.01"
 						min="1.00"
-						max="3.00"
-					/>
+						max="3.00" />
 				</div>
 			</div>
 			<div class="input-container">
@@ -111,8 +112,7 @@
 						inputmode="numeric"
 						name="decimal-string-input-name"
 						id="decimal-string-input-id"
-						pattern="\d+\.\d{2}"
-					/>
+						pattern="\d+\.\d{2}" />
 				</div>
 			</div>
 
@@ -126,21 +126,23 @@
 						type="email"
 						name="email-input-name"
 						id="email-input-id"
-						required
-					/>
+						required />
 				</div>
 			</div>
 
-			<div>
-				<p>Pick an ice cream flavor</p>
+			<!-- 
+			fieldset allows for grouping radio buttons together for accessibility
+			legend acts as the label for the fieldset
+			-->
+			<fieldset style="border: 0; margin-top: 1em; margin-left: 0; padding: 0">
+				<legend>Pick an ice cream flavor</legend>
 				<!-- All radios in a set should have the same "name" attribute, but different values -->
 				<label>
 					<input
 						type="radio"
 						name="flavor"
 						value="chocolate"
-						id="flavor-chocolate"
-					/>
+						id="flavor-chocolate" />
 					Chocolate
 				</label>
 				<label>
@@ -148,8 +150,7 @@
 						type="radio"
 						name="flavor"
 						value="vanilla"
-						id="flavor-vanilla"
-					/>
+						id="flavor-vanilla" />
 					Vanilla
 				</label>
 				<label>
@@ -158,11 +159,10 @@
 						name="flavor"
 						value="strawberry"
 						id="flavor-strawberry"
-						checked
-					/>
+						checked />
 					Strawberry
 				</label>
-			</div>
+			</fieldset>
 
 			<div>
 				<p>Pick some pizza attributes (individual)</p>
@@ -171,50 +171,42 @@
 					type="checkbox"
 					name="topping-peppers"
 					id="topping-peppers"
-					checked
-				/>
+					checked />
 				<label for="topping-peppers">Peppers</label>
 				<input
 					type="checkbox"
 					name="topping-sausage"
-					id="topping-sausage"
-				/>
+					id="topping-sausage" />
 				<label for="topping-sausage">Sausage</label>
 				<input
 					type="checkbox"
 					name="topping-mushrooms"
-					id="topping-mushrooms"
-				/>
+					id="topping-mushrooms" />
 				<label for="topping-mushrooms">Mushrooms</label>
 				<input
 					type="checkbox"
 					name="sauce-regular"
-					id="sauce-regular"
-				/>
+					id="sauce-regular" />
 				<label for="sauce-regular">Regular sauce</label>
 				<input
 					type="checkbox"
 					name="sauce-spicy"
-					id="sauce-spicy"
-				/>
+					id="sauce-spicy" />
 				<label for="sauce-spicy">Spicy sauce</label>
 				<input
 					type="checkbox"
 					name="crust-regular"
-					id="crust-regular"
-				/>
+					id="crust-regular" />
 				<label for="crust-regular">Regular crust</label>
 				<input
 					type="checkbox"
 					name="crust-thin"
-					id="crust-thin"
-				/>
+					id="crust-thin" />
 				<label for="crust-thin">thin crust</label>
 				<input
 					type="checkbox"
 					name="crust-sicilian"
-					id="crust-sicilian"
-				/>
+					id="crust-sicilian" />
 				<label for="crust-sicilian">sicilian crust</label>
 			</div>
 
@@ -230,29 +222,25 @@
 					type="checkbox"
 					name="topping"
 					value="peppers"
-					id="combined-topping-peppers"
-				/>
+					id="combined-topping-peppers" />
 				<label for="combined-topping-peppers">Peppers</label>
 				<input
 					type="checkbox"
 					name="topping"
 					value="sausage"
-					id="combined-topping-sausage"
-				/>
+					id="combined-topping-sausage" />
 				<label for="combined-topping-sausage">Sausage</label>
 				<input
 					type="checkbox"
 					name="topping"
 					value="pineapple"
-					id="combined-topping-pineapple"
-				/>
+					id="combined-topping-pineapple" />
 				<label for="combined-topping-pineapple">Pineapple</label>
 				<input
 					type="checkbox"
 					name="topping"
 					value="mushrooms"
-					id="combined-topping-mushrooms"
-				/>
+					id="combined-topping-mushrooms" />
 				<label for="combined-topping-mushrooms">Mushrooms</label>
 			</div>
 
@@ -262,8 +250,7 @@
 				<label for="car-make">Select a car manufacturer</label>
 				<select
 					name="car-make"
-					id="car-make"
-				>
+					id="car-make">
 					<option value="">Please select a manufacturer</option>
 					<option value="ford">Ford</option>
 					<option value="honda">Honda</option>
@@ -280,8 +267,7 @@
 					multiple
 					size="2"
 					name="fruit"
-					id="fruit"
-				>
+					id="fruit">
 					<option>Apples</option>
 					<option>Bananas</option>
 					<option>Pears</option>
@@ -297,19 +283,13 @@
 					id="life-story"
 					cols="30"
 					rows="10"
-					maxlength="1000"
-				></textarea>
+					maxlength="1000"></textarea>
 			</div>
 			<div>
 				<!-- Easier to style with CSS, easier to work with -->
 				<p>Buttons</p>
 				<button type="submit">Submit</button>
-				<button
-					type="reset"
-					disabled
-				>
-					Reset
-				</button>
+				<button type="reset">Reset</button>
 				<button type="button">Generic</button>
 			</div>
 			<div>
@@ -319,8 +299,7 @@
 				<input type="reset" />
 				<input
 					type="button"
-					value="Generic"
-				/>
+					value="Generic" />
 			</div>
 		</form>
 	</body>
