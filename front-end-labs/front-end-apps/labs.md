@@ -8,7 +8,7 @@ Starting command: `npm run dev`
 
 We have a home page that points to "To-dos", which we can build together, "ZipPay" which you will build, and "ZipPay Finished" which you can use to see completed versions of the ZipPay app.
 
-Start by running `npm run begin 1` which will set up lab #1. 
+Start by running `npm run begin 1` which will set up lab #1.
 
 Working in `zippay/index.html`:
 
@@ -183,11 +183,9 @@ Let's make the form a little bit better. We will add some validations to the for
 
 Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve it as follows:
 
-1. Create a file `navbar.html`. We will use this as our baseline. It can be a basic HTML page.
-1. Edit `index.html` to add a link to `navbar.html`
-1. Create a second file `navbar.css` which will have all the CSS for navbar.html`
-1. Link `navbar.css` in `navbar.html`
-1. Also link `/css/reset.css` in `navbar.html`. Notice how `navbar.html` looks different now
+1. Create a file `navbar.css`, which will have all the CSS for our navbar
+1. Link `navbar.css` into `index.html`
+1. Also link `/css/reset.css` in `index.html`. Notice how `index.html` looks different now
 1. Best practices first: add a class to the `nav` element and call it `navbar-list`.
 1. Change the appropriate elements under `.navbar-list` so that the following are true
 
@@ -195,11 +193,11 @@ Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve 
 - Anchors do not have underlines
 - Choose a color for list items; suggestion: #3a6bbf
 
-1. Take a look at your page and see if you have the changes you want
+8. Take a look at your page and see if you have the changes you want
 
 ### Lab 8: Navbar: Display
 
-We're going to change the way the navbar elements are displayed. Keep working in `navbar.html` and `navbar.css`.
+We're going to change the way the navbar elements are displayed. Keep working in `index.html` and `navbar.css`.
 
 1. Remove any padding from the unordered list
 1. Target the appropriate element in the unordered list so that it displays in-line

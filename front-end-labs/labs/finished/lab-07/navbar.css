@@ -1,0 +1,8 @@
+.navbar-list li {
+	list-style-type: none;
+}
+
+.navbar-list a {
+	text-decoration: none;
+	color: #3a6bbf
+}
