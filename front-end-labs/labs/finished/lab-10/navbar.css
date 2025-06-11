@@ -1,0 +1,40 @@
+body {
+	padding: 0 3px;
+}
+
+body > header {
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+.navbar-list {
+	margin-bottom: 1em;
+}
+
+.navbar-list ul {
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+	gap: 10px;
+}
+
+.navbar-list li {
+	list-style-type: none;
+	padding: 0 0.2em;
+	text-align: center;
+	color: #3a6bbf;
+	flex: 1;
+}
+
+.navbar-list li:hover {
+	color: white;
+	background-color: blueviolet;
+}
+
+.navbar-list a {
+	text-decoration: none;
+}
+
+.navbar-list a:visited {
+	color: inherit;
+}
