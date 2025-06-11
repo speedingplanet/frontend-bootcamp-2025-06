@@ -237,7 +237,7 @@ There are limitations to using `inline-block`. Let's swap it out for flexbox
 
 ## Lab 11: Putting it all together. Part 1: Form HTML
 
-Now that we know grids forms pretty well, let's add a form all at once. Account settings should have the following:
+Now that we know grids and forms pretty well, let's add a form all at once. Account settings should have the following:
 
 1. **First Name** field: required, minimum length 2, alphabetical characters, spaces and dashes only. [The format is a challenge, feel free to come back to it when you get the rest of the form done]
 2. Same for **Last Name**
@@ -248,7 +248,7 @@ Now that we know grids forms pretty well, let's add a form all at once. Account 
 7. **Telephone**: Similar?
 8. **Account type**: Select from one of "Personal", "Corporate" or "Other". Is there a form widget that could help here? Select "Personal" by default.
 
-### Lab 12: Putting it all together. Part 2: Grid Layout
+### Lab 11: Putting it all together. Part 2: Grid Layout
 
 The Account Settings form has the functionality we need, but does not have any sort of useful or pleasing layout.
 
