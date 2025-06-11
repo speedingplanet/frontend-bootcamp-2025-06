@@ -204,6 +204,7 @@ We're going to change the way the navbar elements are displayed. Keep working in
 1. Update the padding for list items to something appropriate so there's a little horizontal space on either side
 1. Try getting the list items to equally take up space in the width of the screen. That is, to be evenly distributed across the width of the screen.
 1. Center the text in each element in the navbar
+1. Add some space below the navbar
 
 While we're here, let's clean up some more of the index.html:
 
@@ -215,8 +216,15 @@ While we're here, let's clean up some more of the index.html:
 
 We will use psuedo-classes to respond to user interactions
 
-1. Turn off the behavior where a visited link has a different color from an unvisited link
+1. Turn off the behavior where a visited link has a different color from an unvisited link.
 1. When hovering over one of the navbar elements, swap the background and text colors (for example, if it was originally black text on a white background, make it white text on a black background)
+
+Let's use this over in Send/Receive Payments as well. 
+
+1. Update `send-receive.html` to link to the CSS files `/css/reset.css` and `navbar.css`
+1. Overwrite the current navbar with the same code that we're using in `index.html`
+1. Add a `style` block to `send-receive.html` 
+1. In that block, change the background color of a form input to one color if it's valid, and another color if it's invalid 
 
 ### Lab 10: Navbar: Flexbox
 
