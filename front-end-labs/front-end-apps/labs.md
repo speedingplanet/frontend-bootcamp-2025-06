@@ -176,6 +176,8 @@ Let's make the form a little bit better. We will add some validations to the for
 1. The Recipient can't be empty. All of our usernames are at least four characters long. Validate this field accordingly.
 1. The Amount is also required, must be positive, have only two decimal places, and be between $0.01 and $1000.00
 1. The Reason can't be longer than 255 characters
+1. Add a radio button toggle between the options "Public", "Friends only", and "Private". Make sure one of the radio buttons is checked.
+1. Add a section for "Send receipts via:" and the options are two checkboxes: "Email" and "SMS". Neither of them is checked. 
 
 ## CSS Exercises
 
@@ -183,9 +185,9 @@ Let's make the form a little bit better. We will add some validations to the for
 
 Currently, the navbar is a bulleted list, not ideal for a navbar. Let's improve it as follows:
 
-1. Create a file `navbar.css`, which will have all the CSS for our navbar
-1. Link `navbar.css` into `index.html`
 1. Also link `/css/reset.css` in `index.html`. Notice how `index.html` looks different now
+1. Create a file `navbar.css`, which will have all the CSS for our navbar
+1. Also Link `navbar.css` into `index.html`
 1. Best practices first: add a class to the `nav` element and call it `navbar-list`.
 1. Change the appropriate elements under `.navbar-list` so that the following are true
 
