@@ -12,6 +12,11 @@
 		<form>
 			<div>
 				<label for="text-example">Text example:</label>
+				<!-- 
+				The minlength and maxlength constraints are ONLY checked 
+				if the user has interacted with (typed into) the form field.
+				Selecting a suggested value does NOT count as interaction. 
+				-->
 				<input
 					type="text"
 					name="text-example"
