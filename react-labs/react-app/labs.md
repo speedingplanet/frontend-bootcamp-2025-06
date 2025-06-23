@@ -81,3 +81,63 @@ Notes about different possibilities:
 - You could create an additional class to manage visibility instead
 - Would the `hidden` attribute work? 
 
+### Lab 4: Testing
+
+#### Part 1
+
+In `CalculatorDisplay.test.tsx`:
+
+Write a test that loads and displays `CalculatorDisplay`
+
+`render` to render `CalculatorDisplay` (pass whatever values you'd like for attributes)
+
+Try expecting that something with the text 'Choose' is not null, or
+in the document.
+
+Save and make sure it works by having `npm run test` running in a terminal
+
+#### Part 2
+
+In `CalculatorDisplay.test.tsx`:
+
+Add a test to ensure that the display is doing math correctly
+
+Use the `container` feature with `querySelector` against the element with the
+class "result" to check the results.
+
+Or get to that information a different way, if you're feeling creative.
+
+#### Part 3
+
+In `Calculator.test.tsx`:
+
+Write a test that loads and displays Calculator
+
+`render` to render Calculator
+
+You could use `getByLabelText` to see if you could find the label for the drop-down
+Don't forget that it takes a TextMatch argument, not just a string
+https://testing-library.com/docs/queries/about/#textmatch
+
+Save and make sure it works by having `npm run test` running in a terminal
+
+#### Part 4
+
+Write a test to make sure that the equation is not displayed initially
+
+You probably want the `toBeVisible` matcher called on your `expect`
+
+#### Part 5
+
+Write a test to make sure that the equation IS displayed after choosing an
+operator
+
+You will need to use `userEvent` with `selectOptions` to trigger a select event
+https://testing-library.com/docs/user-event/v13/#selectoptionselement-values-options
+
+Remember that you are selecting based on the 'value' attribute of the <option>
+
+Also remember that events are ASYNCHRONOUS. So label your function `async`
+and be sure to `await` userEvent calls
+
+Several different ways you could find out if the equation is displayed.
