@@ -37,10 +37,6 @@ function EventHandling() {
 				</p>
 				<p>
 					In-line handler:
-					{/* <button
-						className="btn btn-secondary"
-						onClick={() => setMessage('You clicked on the in-line button')}
-					> */}
 					<button
 						className="btn btn-secondary"
 						onClick={() => setMessage('You clicked on the in-line button')}
@@ -64,8 +60,8 @@ function EventHandling() {
 						name="flipper"
 						id="yes"
 						value="yes"
-						onChange={(e) => {
-							setYesNoValue(e.currentTarget.value);
+						onChange={(event) => {
+							setYesNoValue(event.currentTarget.value);
 						}}
 						checked={yesNoValue === 'yes'}
 					/>

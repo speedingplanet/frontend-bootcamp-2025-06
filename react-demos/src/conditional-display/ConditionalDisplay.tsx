@@ -18,9 +18,10 @@ function ConditionalDisplay() {
 
 	function handleToggleBox2() {
 		if (showBox2 === 'block') {
-			return setShowBox2('none');
+			setShowBox2('none');
+		} else {
+			setShowBox2('block');
 		}
-		return setShowBox2('block');
 	}
 
 	return (
