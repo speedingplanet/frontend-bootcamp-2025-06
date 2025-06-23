@@ -6,21 +6,9 @@ export type MathOperator = '' | '+' | '-' | '*' | '/';
 interface CalculatorDisplayProps {
 	lValue: number;
 	rValue: number;
-	// Union type: pick one of the following options
 	operator: MathOperator;
 }
 
-/*
-Do not display the equation unless the operator is not an empty string
-
-Modify the output so that it does not appear if the operator is an empty string.
-Notes about different possibilities:
-- Using the `hidden` attribute does not work. Why?
-- A style attribute might work, but what property?
-	- visibility?
-	- display?
-- You could create an additional class to manage visibility instead
-*/
 function CalculatorDisplay({ lValue, rValue, operator }: CalculatorDisplayProps) {
 	let result: number | undefined;
 	switch (operator) {

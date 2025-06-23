@@ -34,7 +34,7 @@ Pass values into `CalculatorDisplay` for
 
 If you set the type for the `operator` property to a `string` in Lab 1, try building an enum or a union type, instead. 
 
-### Lab 2: 
+### Lab 2: State and `useState`
 
 Either continue with your existing file, or set up the class files by running `npm run begin 2`. 
 
@@ -60,3 +60,24 @@ to make it a controlled component (controlled by `handleSwitch` above)
 
 Pass the value you used for the operator in your `useState` hook into
 `CalculatorDisplay` as the `operator` property.
+
+### Lab 2a: Undefined
+
+We've been using `NaN` to express a failed equation, usually resulting from a bad `operator` prop. Consider letting `result` be `undefined` or a `number`. How could we manage this is the display for `CalculatorDisplay`? Consider using either the logical OR `||` or maybe the nullish coalescing operator `??`. 
+
+### Lab 3: UI Improvements
+
+Either continue with your existing file, or set up the class files by running `npm run begin 3`. 
+
+In `CalculatorDisplay.tsx`: 
+
+Do not display the equation unless the operator is not an empty string
+
+Modify the output so that it does not appear if the operator is an empty string.
+Notes about different possibilities:
+- A style attribute might work, but what property?
+	- visibility?
+	- display?
+- You could create an additional class to manage visibility instead
+- Would the `hidden` attribute work? 
+
