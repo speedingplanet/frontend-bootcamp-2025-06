@@ -1,8 +1,16 @@
 import React from 'react';
 import './CalculatorDisplay.css';
 
-function CalculatorDisplay({ lValue, rValue, operator }) {
-	let result = 0;
+export type MathOperator = '+' | '-' | '*' | '/';
+
+interface CalculatorDisplayProps {
+	lValue: number;
+	rValue: number;
+	operator: MathOperator
+}
+
+function CalculatorDisplay({ lValue, rValue, operator }: CalculatorDisplayProps) {
+	let result: number;
 	switch (operator) {
 		case '+':
 			result = lValue + rValue;
@@ -17,7 +25,7 @@ function CalculatorDisplay({ lValue, rValue, operator }) {
 			result = lValue / rValue;
 			break;
 		default:
-			result = 'unknown';
+			result = NaN;
 	}
 
 	return (
