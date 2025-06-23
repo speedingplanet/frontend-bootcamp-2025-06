@@ -249,6 +249,7 @@ Now that we know grids and forms pretty well, let's add a form all at once. Acco
 6. **Email**: Is there a custom field that could be helpful here?
 7. **Telephone**: Similar?
 8. **Account type**: Select from one of "Personal", "Corporate" or "Other". Is there a form widget that could help here? Select "Personal" by default.
+9. Also add submit and reset buttons
 
 ### Lab 11: Putting it all together. Part 2: Grid Layout
 
