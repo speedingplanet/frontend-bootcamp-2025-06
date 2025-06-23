@@ -9,9 +9,9 @@ Set up the class files by running `npm run begin 1`.
 In CalculatorDisplay.tsx:
 
 Fill in `CalculatorDisplay`. It should take three props:
-	- `lValue`: the left operand, a number
-	- `rValue`: the right operand, a number
-	- `operator`: the operator, i.e. + - * /
+- `lValue`: the left operand, a number
+- `rValue`: the right operand, a number
+- `operator`: the operator, i.e. + - * /
 
 Caculate the result based on the operands and the operator
 
@@ -48,7 +48,7 @@ Use the `useState` hook to initialize the operator
 Write an event handler, `handleSwitch` which takes an event as an argument
 and calls the setter you configured in your `useState` call
 
-Add a <select> list above `CalculatorDisplay`. The options should be
+Add a `<select>` list above `CalculatorDisplay`. The options should be
 - "Choose" / value is the empty string
 - Addition
 - Subtraction
