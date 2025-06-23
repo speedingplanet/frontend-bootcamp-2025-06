@@ -20,6 +20,7 @@ import EventHandling from './event-handling/EventHandling';
 import ConditionalDisplay from './conditional-display/ConditionalDisplay';
 import TodosManager from './todos/TodosManager';
 import RoutingManager from './routing/RoutingManager';
+import PropsParent from './props-component/PropsParent';
 
 function App() {
 	return (
@@ -34,6 +35,9 @@ function App() {
 				<div className="row">
 					<div className="col-3">
 						<ul className="list-unstyled">
+							<li>
+								<NavLink to="props-component">Props Component</NavLink>
+							</li>
 							<li>
 								<NavLink to="event-handling">Event Handling</NavLink>
 							</li>
@@ -94,6 +98,8 @@ function App() {
 					</div>
 					<div className="col">
 						<Routes>
+							<Route path="/props-component"
+							element={<PropsParent />} />
 							<Route
 								path="/event-handling"
 								element={<EventHandling />}
