@@ -26,6 +26,8 @@ test('Checking comment length', () => {
 });
 
 it('should render the BasicComponent component', () => {
+
+	// Populates the "screen" variable with the rendered component
 	render(<BasicComponent />);
 
 	/*
@@ -54,7 +56,7 @@ it('should access the component in several ways', () => {
 
 /*
 	This may be necessary sometimes, but it goes against the philosophy of
-	testing library
+	testing library. Use rarely. 
 */
 it('should allow access to the underlying DOM', () => {
 	// The nearest element wrapper around this component
@@ -65,6 +67,10 @@ it('should allow access to the underlying DOM', () => {
 	expect(secondListItem!.textContent).toEqual('Bananas');
 });
 
+/*
+	The alternative to the above. Specifically identify an element
+	with a test id (data-testid attribute in HTML)
+*/
 it('should allow access via a test id', () => {
 	render(<BasicComponent />);
 	expect(screen.getByTestId('oranges')).not.toBeNull();
@@ -72,6 +78,8 @@ it('should allow access via a test id', () => {
 
 it("should access a form field via the field's label", () => {
 	render(<BasicComponent />);
+
+	// This is the form field! NOT the label. 
 	let formField = screen.getByLabelText(/favorite/i);
 	expect(formField).toBeInTheDocument();
 	expect(formField).toBeVisible();
