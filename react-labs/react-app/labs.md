@@ -80,6 +80,7 @@ How can we hide `CalculatorDisplay`?
 	- opacity?
 - You could create an additional class to manage visibility instead
 - Would the `hidden` attribute work? 
+- What about using a conditional in JavaScript to show/hide the component?
 
 ### Lab 4: Testing
 
