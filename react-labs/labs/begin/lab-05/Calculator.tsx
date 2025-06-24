@@ -2,17 +2,6 @@ import React, { useState } from 'react';
 import './Calculator.css';
 import CalculatorDisplay, { MathOperator } from './CalculatorDisplay';
 
-/*
-Update the calculator so all the values are user-entered
-
-In the places marked below, add two fields, for the left and right operands of the equation
-Each should be tied to their own `useState` call, as well as their own event handler
-Pass the state values for the left and the right operands into CalculatorDisplay
-
-Test your code locally to make sure it works.
-You can run `npm run test` if you'd like, but there are two tests that are skipped
-We will write actual tests for it in the next lab
-*/
 function Calculator() {
 	const [operator, setOperator] = useState<MathOperator>('');
 

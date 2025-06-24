@@ -30,12 +30,18 @@ function CalculatorDisplay({ lValue, rValue, operator }: CalculatorDisplayProps)
 		<div
 			className="calculator-display"
 			style={{ visibility: operator === '' ? 'hidden' : 'visible' }}
+			data-testid="calculator-display"
 		>
 			<div className="lValue">{lValue}</div>
 			<div className="operator">{operator}</div>
 			<div className="rValue">{rValue}</div>
 			<div>=</div>
-			<div className="result">{result ?? 'Invalid equation'}</div>
+			<div
+				className="result"
+				data-testid="calculator-result"
+			>
+				{result ?? 'Invalid equation'}
+			</div>
 		</div>
 	);
 }

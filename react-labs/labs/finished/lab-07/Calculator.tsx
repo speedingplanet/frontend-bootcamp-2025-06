@@ -2,32 +2,6 @@ import React, { useState } from 'react';
 import './Calculator.css';
 import CalculatorDisplay, { MathOperator } from './CalculatorDisplay';
 
-/*
-Change the use of state from three separate state values to one state object:
-
-Create variable, `initialState`, which has the properties "operator",
-"lValue", and "rValue"
-
-Replace the three `useState` calls with one, using `initialState`
-as the initial state
-
-Notice how all three form fields:
-- Have a name value that corresponds to the name of a state property
-- Are controlled components
-
-Replace the three separate event handlers with one unified
-event handler: `handleFormUpdate`.
-
-In `handleFormUpdate`, get the name and the value of the `currentTarget`
-and use that to update the state. You will need to pass an entire object
-into the setter function, which means merging object literals, probably
-with the spread (...) operator.
-
-If you have `npm run test` running in a separate window, it should still pass.
-Try out your code in the browser as well. Functionality should stay the same,
-even if the underlying implementation is different.
-*/
-
 interface CalculatorState {
 	operator: MathOperator;
 	lValue: number;
