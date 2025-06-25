@@ -26,19 +26,21 @@ test('Checking comment length', () => {
 });
 
 it('should render the BasicComponent component', () => {
-
 	// Populates the "screen" variable with the rendered component
 	render(<BasicComponent />);
 
 	/*
 	Find an element by its text, error/failure if not found
 	screen.getByText('Apples')
+
+	screen.queryBy... return null, NOT an error, if not found, so
 	expect().not -> Negates the next matcher
 	toBeNull() -> Checks for nullity
 	*/
 
-	expect(screen.getByText('Apples')).not.toBeNull();
-	expect(screen.getByText('Bananas')).toBeInTheDocument();
+	screen.getByText('Apples');
+	expect(screen.queryByText('Apples')).not.toBeNull();
+	expect(screen.queryByText('Bananas')).toBeInTheDocument();
 });
 
 it('should access the component in several ways', () => {
@@ -50,8 +52,11 @@ it('should access the component in several ways', () => {
 	// Inexact match, and case-insensitive
 	expect(screen.getByText('app', { exact: false })).not.toBeNull();
 
-	// Regular expression match (currently matching the behavior of exact)
-	expect(screen.getByText(/nan/i));
+	// Regular expression match (currently matching the behavior of exact=false)
+	expect(screen.getByText(/ban/i));
+
+	// Using the RegExp constructor
+	// expect(screen.getByText(new RegExp('nan', 'i')));
 });
 
 /*
@@ -64,7 +69,8 @@ it('should allow access to the underlying DOM', () => {
 
 	let secondListItem = container.querySelector('li:nth-child(2)');
 	expect(secondListItem).not.toBeNull();
-	expect(secondListItem!.textContent).toEqual('Bananas');
+	// expect(secondListItem!.textContent).toEqual('Bananas');
+	expect(secondListItem!.textContent).toMatch(/ban/i);
 });
 
 /*
@@ -79,7 +85,7 @@ it('should allow access via a test id', () => {
 it("should access a form field via the field's label", () => {
 	render(<BasicComponent />);
 
-	// This is the form field! NOT the label. 
+	// This is the form field! NOT the label.
 	let formField = screen.getByLabelText(/favorite/i);
 	expect(formField).toBeInTheDocument();
 	expect(formField).toBeVisible();
