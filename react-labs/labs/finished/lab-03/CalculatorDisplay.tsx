@@ -1,12 +1,12 @@
 import React from 'react';
 import './CalculatorDisplay.css';
 
-export type MathOperator = '' | '+' | '-' | '*' | '/';
+export type MathOperator = '+' | '-' | '*' | '/';
 
 interface CalculatorDisplayProps {
 	lValue: number;
 	rValue: number;
-	operator: MathOperator;
+	operator: MathOperator
 }
 
 function CalculatorDisplay({ lValue, rValue, operator }: CalculatorDisplayProps) {
@@ -24,18 +24,27 @@ function CalculatorDisplay({ lValue, rValue, operator }: CalculatorDisplayProps)
 		case '/':
 			result = lValue / rValue;
 			break;
+		default:
+			result = undefined;
 	}
 
 	return (
-		<div
-			className="calculator-display"
-			style={{ visibility: operator === '' ? 'hidden' : 'visible' }}
-		>
+		<div className="calculator-display">
 			<div className="lValue">{lValue}</div>
 			<div className="operator">{operator}</div>
 			<div className="rValue">{rValue}</div>
 			<div>=</div>
-			<div className="result">{result ?? 'Invalid equation'}</div>
+			{/* If result !== undefined, use result, else use 'No result' */}
+			{/* <div className="result">{result !== undefined ? result : 'No result'}</div> */}
+
+			{/* If result is a true value, use result, else use 'No result' */}
+			{/* <div className="result">{result ? result : 'No result'}</div> */}
+
+			{/* || Is result a true value? */}
+			{/* <div className="result">{result || 'No result'}</div> */}
+
+			{/* ?? Is result "null" or "undefined" */}
+			<div className="result">{result ?? 'No result'}</div>
 		</div>
 	);
 }

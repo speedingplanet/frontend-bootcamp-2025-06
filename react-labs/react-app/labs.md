@@ -92,8 +92,7 @@ Write a test that loads and displays `CalculatorDisplay`
 
 Call `render` to render `CalculatorDisplay` (pass whatever values you'd like for attributes)
 
-Try expecting that something with the text 'Choose' is not null, or
-in the document.
+Try expecting that one of the values you passed into `CalculatorDisplay` is not null or in the document. Alternatively, search for an equals sign "=", which is always present. 
 
 Save and make sure it works by having `npm run test` running in a terminal
 
@@ -112,9 +111,11 @@ Or get to that information a different way, if you're feeling creative.
 
 In `Calculator.test.tsx`:
 
-Write a test that loads and displays Calculator
+Write a test that loads and displays `Calculator`
 
-Call `render` to render Calculator
+Call `render` to render `Calculator`.
+
+Validate that the drop-down has rendered into the `Calculator` component.
 
 You could use `getByLabelText` to see if you could find the label for the drop-down
 Don't forget that it takes a TextMatch argument, not just a string
