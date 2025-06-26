@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import './Calculator.css';
 import CalculatorDisplay, { MathOperator } from './CalculatorDisplay';
 
@@ -7,72 +7,75 @@ function Calculator() {
 	const [lValue, setLValue] = useState(0);
 	const [rValue, setRValue] = useState(0);
 
-	const handleSwitch: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
-		setOperator(event.target.value as MathOperator);
-	};
+	function handleFormUpdate(event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+		let field = event.target.name;
+		let value = Number(event.target.value);
 
-	const handleLValue: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-		setLValue(Number(event.target.value));
-	};
-
-	const handleRValue: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-		setRValue(Number(event.target.value));
-	};
+		switch(field) {
+			case 'leftValue':
+				setLValue(value);
+				break;
+			case 'rightValue':
+				setRValue(value);
+				break;
+			case 'operator':
+				setOperator(event.target.value as MathOperator)
+		}
+	}
 
 	return (
-		<>
-			<form className="mb-1">
-				<div className="calculator">
-					<div className="label">
-						<label htmlFor="left-value">Left Value:</label>
-					</div>
-					<div>
-						{/* left operand field goes here */}
-						<input
-							type="number"
-							name="lValue"
-							id="left-value"
-							value={lValue}
-							onChange={handleLValue}
-						/>
-					</div>
-					<div className="label">
-						<label htmlFor="right-value">Right Value:</label>
-					</div>
-					<div>
-						{/* right operand field goes here */}
-						<input
-							type="number"
-							name="rValue"
-							id="right-value"
-							value={rValue}
-							onChange={handleRValue}
-						/>
-					</div>
-					<div className="label">
-						<label htmlFor="choose-operator">Choose an operator:</label>
-					</div>
-					<div>
-						<select
-							id="choose-operator"
-							onChange={handleSwitch}
-							value={operator}
-						>
-							<option value="">Choose</option>
-							<option value="+">+ Addition</option>
-							<option value="-">- Subtraction</option>
-							<option value="*">* Multiplication</option>
-							<option value="/">/ Division</option>
-						</select>
-					</div>
+		<div>
+			<div className="mb-1 calculator">
+				{/* div>label+input:number */}
+				<div className="label">
+					<label htmlFor="leftValue">Left Value:</label>
 				</div>
-			</form>
+				<div>
+					<input
+						type="number"
+						name="leftValue"
+						id="leftValue"
+						onChange={handleFormUpdate}
+						value={lValue}
+					/>
+				</div>
+				<div className="label">
+					<label htmlFor="rightValue">Right Value:</label>
+				</div>
+				<div>
+					<input
+						type="number"
+						name="rightValue"
+						id="rightValue"
+						onChange={handleFormUpdate}
+						value={rValue}
+					/>
+				</div>
+
+				<div className="label">
+					<label htmlFor="choose-operator">Choose an operator:</label>
+				</div>
+				<div>
+					<select
+						id="choose-operator"
+						name="operator"
+						onChange={handleFormUpdate}
+						value={operator}
+					>
+						<option value="">Choose</option>
+						<option value="+">+ Addition</option>
+						<option value="-">- Subtraction</option>
+						<option value="*">* Multiplication</option>
+						<option value="/">/ Division</option>
+					</select>
+				</div>
+			</div>
 			<CalculatorDisplay
 				lValue={lValue}
 				rValue={rValue}
-				operator={operator as MathOperator}
+				operator={operator}
 			/>
-		</>
+		</div>
 	);
 }
 
