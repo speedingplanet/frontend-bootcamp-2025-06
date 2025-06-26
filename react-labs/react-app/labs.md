@@ -182,9 +182,9 @@ Remove the call to `render(<Calculator />)` from each individual test.
 
 Test-based:
 Go through each of the two skipped tests. Make the following changes:
-1) CalculatorDisplay's root element now has a test id of 'calculator-display',
+1) `CalculatorDisplay`'s root element now has a test id of 'calculator-display',
 	 so there's no reason to use the `container` anymore
-2) Similarly, the .result div under CalculatorDisplay also has a test id
+2) Similarly, the .result div under `CalculatorDisplay` also has a test id
    of 'calculator-result'
 
 Rewrite the test 'Does not display any equation at start' to use the test id.
