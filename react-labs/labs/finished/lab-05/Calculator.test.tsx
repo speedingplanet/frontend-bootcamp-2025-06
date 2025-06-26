@@ -1,28 +1,34 @@
-import React from 'react';
 import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/vitest';
 import Calculator from './Calculator';
 
-test('Loads and displays Calculator', () => {
-	render(<Calculator />);
-
-	expect(screen.getByLabelText(/Choose/)).not.toBeNull();
-	expect(screen.getByLabelText(/Choose/)).toBeInTheDocument();
+test('Smoke test', () => {
+	expect(1 + 1).toBe(2);
 });
 
-test.skip('Does not display any equation at start', () => {
+test('Accessing Calculator', () => {
 	render(<Calculator />);
 
-	expect(screen.getByText(/5/)).not.toBeVisible();
+	// Fails, does not allow partial matches
+	// screen.getByText('Choose an');
+
+	// Succeeds, partial matches allowed
+	// screen.getByText('Choose an', {exact: false});
+
+	// Succeeds, regular expressions are partial by default
+	screen.getByText(/Choose an/);
 });
 
-test.skip('Displays equation after selecting an operator', async () => {
-	const { container } = render(<Calculator />);
+test('Did the operator drop-down render into Calculator?', () => {
+	render(<Calculator />);
 
-	await userEvent.selectOptions(screen.getByLabelText(/Choose/), '+');
-	expect(screen.getByText(/^5/)).toBeVisible();
+	// Errors/fails the test if getByLabelText can't find a match
+	// let selectList = screen.getByLabelText(/operator/);
 
-	expect(container.querySelector('.result')?.textContent).toBe('15');
+	// use an expectation to make sure there are 5 <option> elements under <select>
+	// expect(selectList.querySelectorAll('option')).toHaveLength(5)
+
+	// Also fails if there are not exactly 5 option elements under the select list
+	expect(screen.getByLabelText(/operator/i).querySelectorAll('option')).toHaveLength(5);
 });

@@ -1,78 +1,35 @@
 import React, { useState } from 'react';
-import './Calculator.css';
 import CalculatorDisplay, { MathOperator } from './CalculatorDisplay';
 
 function Calculator() {
 	const [operator, setOperator] = useState<MathOperator>('');
-	const [lValue, setLValue] = useState(0);
-	const [rValue, setRValue] = useState(0);
 
 	const handleSwitch: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
-		setOperator(event.target.value as MathOperator);
-	};
-
-	const handleLValue: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-		setLValue(Number(event.target.value));
-	};
-
-	const handleRValue: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-		setRValue(Number(event.target.value));
+		setOperator(event.currentTarget.value as MathOperator);
 	};
 
 	return (
-		<>
-			<form className="mb-1">
-				<div className="calculator">
-					<div className="label">
-						<label htmlFor="left-value">Left Value:</label>
-					</div>
-					<div>
-						{/* left operand field goes here */}
-						<input
-							type="number"
-							name="lValue"
-							id="left-value"
-							value={lValue}
-							onChange={handleLValue}
-						/>
-					</div>
-					<div className="label">
-						<label htmlFor="right-value">Right Value:</label>
-					</div>
-					<div>
-						{/* right operand field goes here */}
-						<input
-							type="number"
-							name="rValue"
-							id="right-value"
-							value={rValue}
-							onChange={handleRValue}
-						/>
-					</div>
-					<div className="label">
-						<label htmlFor="choose-operator">Choose an operator:</label>
-					</div>
-					<div>
-						<select
-							id="choose-operator"
-							onChange={handleSwitch}
-							value={operator}
-						>
-							<option value="">Choose</option>
-							<option value="+">+ Addition</option>
-							<option value="-">- Subtraction</option>
-							<option value="*">* Multiplication</option>
-							<option value="/">/ Division</option>
-						</select>
-					</div>
-				</div>
-			</form>
+		<div>
+			<div className="mb-1">
+				<label htmlFor="choose-operator">Choose an operator:</label>
+				<select
+					id="choose-operator"
+					onChange={handleSwitch}
+					value={operator}
+				>
+					<option value="">Choose</option>
+					<option value="+">+ Addition</option>
+					<option value="-">- Subtraction</option>
+					<option value="*">* Multiplication</option>
+					<option value="/">/ Division</option>
+				</select>
+			</div>
 			<CalculatorDisplay
-				lValue={lValue}
-				rValue={rValue}
-				operator={operator as MathOperator}
+				lValue={5}
+				rValue={10}
+				operator={operator}
 			/>
-		</>
+		</div>
 	);
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import type * as CSS from 'csstype';
 import './CalculatorDisplay.css';
 
 export type MathOperator = '' | '+' | '-' | '*' | '/';
@@ -26,10 +27,26 @@ function CalculatorDisplay({ lValue, rValue, operator }: CalculatorDisplayProps)
 			break;
 	}
 
+	/*
+	let visibilityValue: CSS.Property.Visibility;
+	if (operator === '') {
+		visibilityValue = 'hidden'
+	} else {
+		visibilityValue = 'visible'
+	}
+		*/
+
+	let visibility: CSS.Property.Visibility;
+	if (operator === '') {
+		visibility = 'hidden'
+	} else {
+		visibility = 'visible'
+	}
+
 	return (
 		<div
 			className="calculator-display"
-			style={{ visibility: operator === '' ? 'hidden' : 'visible' }}
+			style={{ visibility }}
 		>
 			<div className="lValue">{lValue}</div>
 			<div className="operator">{operator}</div>
