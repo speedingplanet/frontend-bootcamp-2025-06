@@ -15,8 +15,8 @@ function FormDataSingleStateObject() {
 
 	function handleFormUpdate(event: React.ChangeEvent<HTMLInputElement>) {
 		// If `name` is typed as a string, it will cause errors at `nextState[field]`
-		let field = event.currentTarget.name as keyof FormState;
-		let value = event.currentTarget.value;
+		let field = event.target.name as keyof FormState;
+		let value = event.target.value;
 
 		let nextState: FormState = { ...formState };
 		nextState[field] = value;

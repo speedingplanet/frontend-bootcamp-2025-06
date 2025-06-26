@@ -135,9 +135,9 @@ Write a test to make sure that the equation IS displayed after choosing an
 operator
 
 You will need to use `userEvent` with `selectOptions` to trigger a select event
-https://testing-library.com/docs/user-event/v13/#selectoptionselement-values-options
+https://testing-library.com/docs/user-event/utility#-selectoptions-deselectoptions
 
-Remember that you are selecting based on the 'value' attribute of the <option>
+Remember that you are selecting based on the 'value' attribute of the `<option>`
 
 Also remember that events are ASYNCHRONOUS. So label your function `async`
 and be sure to `await` userEvent calls

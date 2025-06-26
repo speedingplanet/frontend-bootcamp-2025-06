@@ -5,7 +5,7 @@ function Calculator() {
 	const [operator, setOperator] = useState('');
 
 	function handleSwitch(event: React.ChangeEvent<HTMLSelectElement>) {
-		setOperator(event.currentTarget.value);
+		setOperator(event.target.value);
 	}
 
 	return (

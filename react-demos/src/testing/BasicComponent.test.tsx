@@ -108,7 +108,9 @@ it('should respond to content typed into a form field', async () => {
 	expect(lastItem).toHaveTextContent('');
 
 	// Interaction
-	let fruit = 'Lemons';
+	let fruit = 'Pineapple';
+
+	// This fires asynchronously, so we wait for it to finish 
 	await user.type(formField, fruit);
 	expect(formField).toHaveValue(fruit);
 	expect(lastItem).toHaveTextContent(fruit);

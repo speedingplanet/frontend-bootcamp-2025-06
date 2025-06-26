@@ -42,7 +42,7 @@ function TextInput({ id, name, children, ...props }: TextInputProps) {
 					name={name}
 					value={context?.state ? context.state[name as keyof FormState] : undefined}
 					onChange={(event) => {
-						context?.updater(event.currentTarget.name, event.currentTarget.value);
+						context?.updater(event.target.name, event.target.value);
 					}}
 					{...props}
 				/>

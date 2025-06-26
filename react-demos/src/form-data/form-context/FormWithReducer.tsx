@@ -35,8 +35,8 @@ function FormWithReducer() {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	function handleFormUpdate(event: React.ChangeEvent<HTMLInputElement>) {
-		let field = event.currentTarget.name;
-		let value = event.currentTarget.value;
+		let field = event.target.name;
+		let value = event.target.value;
 
 		dispatch({
 			type: `change_${field}`,

@@ -8,8 +8,8 @@ function FormDataEventObject() {
 	const [state, setState] = useState('');
 
 	function handleFormUpdate(event: React.ChangeEvent<HTMLInputElement>) {
-		let field = event.currentTarget.name;
-		let value = event.currentTarget.value;
+		let field = event.target.name;
+		let value = event.target.value;
 
 		switch (field) {
 			case 'firstName':

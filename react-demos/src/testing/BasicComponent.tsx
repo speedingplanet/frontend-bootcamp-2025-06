@@ -8,7 +8,7 @@ function BasicComponent() {
 	// Part 2: An event handler that updates state
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	function handleFavorite(event: React.ChangeEvent<HTMLInputElement>) {
-		setFavorite(event.currentTarget.value);
+		setFavorite(event.target.value);
 	}
 
 	return (
@@ -21,13 +21,12 @@ function BasicComponent() {
 					id="favorite-fruit"
 					// Part 3: Form field calls the event handler whenever its value changes
 					onChange={(event) => {
-						setFavorite(event.currentTarget.value);
+						setFavorite(event.target.value);
 					}}
 					// Part 4: The value displayed is the value from state
 					value={favorite}
 				/>
 			</div>
-			<button className="btn btn-primary">Click me</button>
 			<ul>
 				<li>Apples</li>
 				<li className={classes.bananas}>Bananas</li>

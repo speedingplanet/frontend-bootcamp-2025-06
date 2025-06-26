@@ -23,8 +23,8 @@ function FormWithContext() {
 
 	/*
 	function handleFormUpdate(event: React.ChangeEvent<HTMLInputElement>) {
-		let field = event.currentTarget.name;
-		let value = event.currentTarget.value;
+		let field = event.target.name;
+		let value = event.target.value;
 
 		let nextState = { ...formState };
 		nextState[field as keyof FormState] = value;

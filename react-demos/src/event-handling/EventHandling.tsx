@@ -61,7 +61,7 @@ function EventHandling() {
 						id="yes"
 						value="yes"
 						onChange={(event) => {
-							setYesNoValue(event.currentTarget.value);
+							setYesNoValue(event.target.value);
 						}}
 						checked={yesNoValue === 'yes'}
 					/>
@@ -73,7 +73,7 @@ function EventHandling() {
 						name="flipper"
 						id="no"
 						value="no"
-						onChange={(e) => setYesNoValue(e.currentTarget.value)}
+						onChange={(e) => setYesNoValue(e.target.value)}
 						checked={yesNoValue === 'no'}
 					/>
 					&nbsp;

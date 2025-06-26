@@ -18,9 +18,9 @@ function Calculator() {
 	const [state, setState] = useState(initialState);
 
 	const handleFormUpdate: React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement> = (event) => {
-		let field = event.currentTarget.name;
-		let value: string | number = event.currentTarget.value;
-		if (event.currentTarget.name !== 'operator') {
+		let field = event.target.name;
+		let value: string | number = event.target.value;
+		if (event.target.name !== 'operator') {
 			value = Number(value);
 		}
 		setState({ ...state, [field]: value });
