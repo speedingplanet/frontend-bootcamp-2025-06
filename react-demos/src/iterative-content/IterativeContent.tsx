@@ -11,10 +11,10 @@ function IterativeContent() {
 			<div className="col">
 				<h3>Countries ranked by population</h3>
 				<ul>
-					{countries.map((country) => {
+					{countries.map((item, index, array) => {
 						return (
-							<li key={country.id}>
-								{country.country}: {formatter.format(country.pop2022)}
+							<li key={item.id}>
+								{item.country}: {formatter.format(item.pop2022)} [id: {item.id}]
 							</li>
 						);
 					})}

@@ -213,7 +213,7 @@ Notice how all three form fields:
 Replace the three separate event handlers with one unified
 event handler: `handleFormUpdate`.
 
-In `handleFormUpdate`, get the name and the value of the `currentTarget`
+In `handleFormUpdate`, get the name and the value of the `target`
 and use that to update the state. You will need to pass an entire object
 into the setter function, which means merging object literals, probably
 with the spread (...) operator.

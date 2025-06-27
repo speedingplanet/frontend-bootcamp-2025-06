@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import FormDataDisplay from './FormDataDisplay';
 
+interface FormState {
+	firstName: string;
+	lastName: string;
+	// city is present but could be null
+	city: string;
+
+	// state may not be present, but if it is, it's a string
+	state?: string;
+}
+
 const initialState = {
 	firstName: '',
 	lastName: '',
@@ -8,7 +18,7 @@ const initialState = {
 	state: '',
 };
 
-export type FormState = typeof initialState;
+// export type FormState = typeof initialState;
 
 function FormDataSingleStateObject() {
 	const [formState, setFormState] = useState<FormState>(initialState);
@@ -18,7 +28,14 @@ function FormDataSingleStateObject() {
 		let field = event.target.name as keyof FormState;
 		let value = event.target.value;
 
+		/*
+		formState[field] = value;
+		setFormState(formState);
+		*/
+
 		let nextState: FormState = { ...formState };
+
+		// nextState['firstName'] = 'John';
 		nextState[field] = value;
 
 		setFormState(nextState);
